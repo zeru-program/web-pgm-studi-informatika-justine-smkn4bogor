@@ -1,0 +1,8 @@
+<svg width="400" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="polkadots" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+      <circle cx="15" cy="15" r="8" fill="#A7C4BC" />
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#polkadots)" />
+</svg>

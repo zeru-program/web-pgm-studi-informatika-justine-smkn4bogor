@@ -1,0 +1,112 @@
+.navbar {
+    background: rgba(167, 196, 188, .5) !important;
+    border-radius: 30px !important;
+    width: 90%;
+    backdrop-filter: blur(4px);
+    overflow: hidden;
+    transition: all 0.7s ease;
+}
+.navbar-nav > li > .dropdown-menu {
+    background: transparent; 
+    text-align: center;
+    border: 0 !important;
+    border-radius: 0;
+}
+.navbar-nav > li > .dropdown-menu > li{
+    padding-block: 5px;
+    border-top: .5px solid #A7C4BC;
+}
+.dropdown-item {
+    color: #A7C4BC;
+}
+.nav-expanded {
+    padding-bottom: 8px;
+}
+
+.nav-collapsed {
+    padding-bottom: 0;
+}
+
+.header-nav {
+    position: fixed;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 999999;
+}
+.navbar-toggler {
+    border: 0 !important;
+}
+.navbar-toggler:focus,
+.navbar-toggler:hover,
+.navbar-toggler:active {
+    box-shadow: 0 0 0 !important;
+}
+.navbar-nav {
+    align-items: center !important;
+    padding-top: 15px;
+}
+.nav-item {
+    width: 100% !important;
+    text-align: center;
+    border-top: .1px solid #A7C4BC;
+    transition: all .2s;
+    padding-block: 6px;
+}
+.nav-item:hover {
+    background: rgba(0,0,0,.1);
+}
+.nav-link {
+    color: #A7C4BC !important;
+}
+
+.navbar-collapse {
+    padding-bottom: 0 !important;
+}
+
+@media screen and (min-width: 1000px) {
+    .navbar {
+        width: 70%;
+        overflow: visible !important;
+        border-radius: 70px !important;
+    }
+    .header-nav {
+        top: 40px;
+    }
+    
+    #img-fts-nav, #menu-nav {
+        width: 80px !important;
+        padding-block: 20px;
+        margin-left: 30px;
+    }
+    .nav-item {
+        border: 0 !important;
+        text-wrap: nowrap;
+        margin: 0;
+        font-size: 28px;
+        padding: 10px;
+        border-radius: 20px;
+    }
+    .navbar-nav {
+        padding: 0;
+        gap: 30px;
+    }
+    .navbar-collapse {
+        position: absolute;
+        right: 80px;
+        align-items: center;
+    }
+    .navbar-nav > li > .dropdown-menu {
+        background: rgba(0,0,0,.1);
+        border-radius: 10px;
+        margin-top: -1px;
+        width: 100%;
+        backdrop-filter: blur(2px);
+    }
+    .navbar-nav > li > .dropdown-menu > li{
+       padding-block: 5px;
+       border-top: 0 !important;
+    }
+}

@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-family: "Poppins", Sans-Serif;
+}
+
+.text-pm {
+    color: #2F5D62;
+}
+.text-pm2 {
+    color: #8C52FF;
+}
+.bg-scm {
+    background: #DFEEEA;
+}
+.bg-scm2 {
+    background:#E7E7E7;
+}
+
+/* home design */
+.hero-home {
+    background: url("./bdrop-uika1.png") center center fixed;
+    background-size: cover;
+    height: 85vh;
+}
+.box-misi {
+    width: 260px;
+    height: auto;
+    background: #5E8B7E;
+    border-radius: 15px;
+    flex-shrink: 0;
+    text-align: left;
+}
+.box-misi p {
+    font-size: .8em;
+}
+.box-tujuan {
+    width: 350px;
+    height: 330px;
+    padding-bottom: 15px;
+    background: #8C52FF;
+    border-radius: 15px;
+}
+.icon-tujuan {
+    width: 70px;
+    font-size: 70px;
+    margin: 0px;
+}
+.ul-sasaran {
+    list-style-type: "➢  ";
+}
+.ul-sasaran li {
+    font-size: .8em;
+}
+@media screen and (max-width: 770px) {
+    .section-video {
+        height: 309px;
+        margin-top: -180px;
+    }
+    .about-section {
+        margin-top: 300px;
+    }
+}
+@media screen and (min-width: 770px) {
+    .hero-home {
+        height: 45vh;
+    }
+}
