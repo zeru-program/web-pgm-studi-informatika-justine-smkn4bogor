@@ -1,32 +1,70 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+html, * {
+    scroll-behavior: smooth;
+}
 body {
     font-family: "Poppins", Sans-Serif;
 }
 
-.text-pm {
-    color: #2F5D62;
+h1 {
+    font-size: 31px;
 }
-.text-pm2 {
+a {
     color: #8C52FF;
 }
+.text-pm {
+    color: #27005D;
+}
+.text-pm2 {
+    color: #27005D;
+}
 .bg-scm {
-    background: #DFEEEA;
+    background: #8C52FF;
+}
+.bg-scm-d {
+    background: #27005D;
 }
 .bg-scm2 {
-    background:#E7E7E7;
+    background: #E7E7E7;
 }
+
+/* animated */
+.animate__bounceUp {
+    animation: bounceUp 1s ease infinite alternate;
+}
+@keyframes bounceUp {
+    0% {
+        transform: translateY(7px);
+    } 100% {
+        transform: translateY(-7px);
+    }
+}
+/*animated*/
 
 /* home design */
 .hero-home {
-    background: url("./bdrop-uika1.png") center center fixed;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 110%), url("./bdrop-uika1.jpeg") center center;
     background-size: cover;
-    height: 85vh;
+    height: 100vh;
+    position: relative;
 }
+.section-video p {
+    font-size: .85em;
+}
+.btn-cta-home {
+    background: yellow;
+    border: 0;
+    border-radius: 20px;
+}
+.wave-custom {
+    position: absolute;
+    bottom: 0;
+}
+/* visi misi design */
 .box-misi {
     width: 260px;
     height: auto;
-    background: #5E8B7E;
+    background: #27005D;
     border-radius: 15px;
     flex-shrink: 0;
     text-align: left;
@@ -34,35 +72,183 @@ body {
 .box-misi p {
     font-size: .8em;
 }
+.box-misi span {
+    color: yellow;
+}
+/* tujuan design */
 .box-tujuan {
     width: 350px;
-    height: 330px;
+    height: 340px;
     padding-bottom: 15px;
-    background: #8C52FF;
+    background: #27005D;
     border-radius: 15px;
+}
+.box-tujuan p {
+    font-size: .86em;
 }
 .icon-tujuan {
     width: 70px;
     font-size: 70px;
     margin: 0px;
 }
+/* target design */
 .ul-sasaran {
     list-style-type: "➢  ";
 }
 .ul-sasaran li {
     font-size: .8em;
 }
+/* prestasi design */
+.btn-nav-swiper {
+    background: rgba(39, 0, 93, .8);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border: 0;
+    color: white;
+}
+.btn-nav-swiper img {
+    width: 30px;
+}
+.box-prestasi {
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    height: 330px;
+    border-radius: 10px;
+    background: #27005D;
+    position: relative;
+    overflow: hidden;
+}
+.box-prestasi img {
+    width: 100%;
+    height: 170px;
+}
+.tahun-pres {
+    position: absolute;
+    bottom: 0;
+}
+.box-prestasi p {
+    font-size: .75em;
+}
+/* contact section */
+.contact-section i, {
+    font-size: 25px;
+}
+.contact-section span {
+    font-size: 14px;
+}
+
+
+/*** responsive ***/
+/** max 770px its a mobile view **/
+/** min 770px its a desktop view **/
 @media screen and (max-width: 770px) {
     .section-video {
         height: 309px;
-        margin-top: -180px;
+        margin-top: -250px;
     }
     .about-section {
-        margin-top: 300px;
+        margin: 0;
+        padding-top: 330px !important;
+    }
+    .fo-1 {
+        width: 100%;
+    }
+    .fo-2, .fo-3 {
+        margin-top: 30px;
+    }
+    .hero-home {
+        background-attachment: fixed;
     }
 }
 @media screen and (min-width: 770px) {
     .hero-home {
         height: 45vh;
     }
+    .contain-fo {
+        justify-content: space-arround;
+    }
+    .fo-1 {
+        width: 60%;
+    }
+    .contact-section i {
+        font-size: 35px;
+    }
+    .section-video {
+        width: 400px !important;
+        height: 400px;
+        animation: bounceUp 1s ease infinite alternate;
+    }
+    .image-bdrop-about {
+        height: 300px !important;
+    }
+    .box-prestasi {
+        width: 300px !important;
+    }
 }
+
+/** btn back to top **/
+.circular-progress {
+    position: relative;
+}
+
+.bi-arrow-up-short {
+    font-size: 24px;
+}
+
+/** footer design **/
+footer {
+    width: 100%;
+    height: auto;
+    background: #27005D;
+    color: white;
+}
+footer i, footer a, footer span {
+    font-size: 15px !important;
+}
+footer p {
+    font-size: 13px;
+}
+
+.feedback-input {
+  color:white;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight:500;
+  font-size: 18px;
+  border-radius: 5px;
+  line-height: 22px;
+  background-color: transparent;
+  border:2px solid white;
+  transition: all 0.3s;
+  padding: 13px;
+  margin-bottom: 15px;
+  width:50%;
+  box-sizing: border-box;
+  outline:0;
+}
+
+.feedback-input:focus { border:2px solid #CC4949; }
+
+textarea {
+  height: 150px;
+  line-height: 150%;
+  resize:vertical;
+}
+
+[type="submit"] {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  width: 100%;
+  background:yellow;
+  border-radius:5px;
+  border:0;
+  cursor:pointer;
+  color:white;
+  font-size:24px;
+  padding-top:10px;
+  padding-bottom:10px;
+  transition: all 0.3s;
+  margin-top:-4px;
+  font-weight:700;
+}
+[type="submit"]:hover { background:#CC4949; }

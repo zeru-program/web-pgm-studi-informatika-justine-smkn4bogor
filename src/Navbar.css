@@ -1,5 +1,6 @@
 .navbar {
-    background: rgba(167, 196, 188, .5) !important;
+    /*background: rgba(167, 196, 188, .5) !important;*/
+    background: #27005D !important;
     border-radius: 30px !important;
     width: 90%;
     backdrop-filter: blur(4px);
@@ -7,7 +8,7 @@
     transition: all 0.7s ease;
 }
 .navbar-nav > li > .dropdown-menu {
-    background: transparent; 
+    background: #27005D !important;
     text-align: center;
     border: 0 !important;
     border-radius: 0;
@@ -17,7 +18,7 @@
     border-top: .5px solid #A7C4BC;
 }
 .dropdown-item {
-    color: #A7C4BC;
+    color: yellow;
 }
 .nav-expanded {
     padding-bottom: 8px;
@@ -34,7 +35,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    z-index: 999999;
+    z-index: 99999999;
 }
 .navbar-toggler {
     border: 0 !important;
@@ -59,7 +60,7 @@
     background: rgba(0,0,0,.1);
 }
 .nav-link {
-    color: #A7C4BC !important;
+    color: yellow !important;
 }
 
 .navbar-collapse {
