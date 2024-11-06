@@ -101,8 +101,6 @@ a {
 
 /* home design */
 .hero-home {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 110%), url("./bdrop-uika1.jpeg") center center;
-    background-size: cover;
     height: 100vh;
     position: relative;
 }
@@ -233,7 +231,7 @@ a {
     font-size: .75em;
 }
 /* contact section */
-.contact-section i, {
+.contact-section i {
     font-size: 25px;
 }
 .contact-section span {
@@ -306,6 +304,15 @@ a {
 
 .bi-arrow-up-short {
     font-size: 24px;
+}
+
+/** login design **/
+.btn-login-register {
+    border: 2px solid yellow;
+    background: transparent;
+    color: yellow;
+    border-radius: 10px;
+    padding-block: 5px;
 }
 
 /** footer design **/

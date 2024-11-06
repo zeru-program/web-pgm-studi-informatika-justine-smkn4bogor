@@ -4,7 +4,14 @@ import "../Navbar.css";
 const Navbar = () => {
     const [statusNav, setStatusNav] = useState(true)
     const [imgNav, setImgNav] = useState("/nav.svg")
-    const [padBot, setPadBot] = useState("8px") 
+    const [padBot, setPadBot] = useState("8px")
+    var hasLogin = false
+    if (localStorage.getItem("hasLogin")) {
+        hasLogin = true
+    } else {
+        hasLogin = false
+    }
+    
     const handleNav = () => {
         if (statusNav) {
             setImgNav("nav-close.svg")
@@ -43,6 +50,12 @@ const Navbar = () => {
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="#contact">Contact us</a>
+                        </li>
+                        <li className="nav-item" style={{ display: hasLogin ? "none" : "block"}}>
+                            <a className="nav-link" href="/login">Login/Register</a>
+                        </li>
+                        <li className="nav-item" style={{ display: hasLogin ? "block" : "none"}}>
+                            <a className="nav-link" href="/logout">Logout</a>
                         </li>
                     </ul>
                 </div>

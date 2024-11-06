@@ -30,7 +30,7 @@ const HeroBanner = () => {
     return (
       <>
         <header
-          className="w-100 hero-home align-items-center flex-wrap d-flex"
+          className="w-100 hero-home align-items-center flex-wrap d-flex" style={{background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 110%), url("bdrop-uika1.jpeg") center center',  backgroundSize: "cover"}}
           id="home"
         >
           <div
@@ -40,11 +40,11 @@ const HeroBanner = () => {
           >
             <TypeAnimation
               sequence={[
-                "Teknik Informatika",
+                "Teknik informatika",
                 1000,
                 "",
                 1000,
-                "Teknik Informatika",
+                "Teknik informatika",
                 1000,
               ]}
               wrapper="span"
@@ -739,6 +739,7 @@ const Home = () => {
     }, [])
     return (
       <>
+        <Splash />
         <Navbar />
         <HeroBanner />
         <About />
