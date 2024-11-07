@@ -109,6 +109,7 @@ a {
 }
 .btn-cta-home {
     background: yellow;
+    box-shadow: 0 0 0 2px white;
     border: 0;
     border-radius: 20px;
 }
@@ -263,7 +264,7 @@ a {
 }
 @media screen and (min-width: 770px) {
     .hero-home {
-        height: 100vh;
+        height: 110vh;
     }
     .contain-fo {
         justify-content: space-arround;
@@ -275,8 +276,9 @@ a {
         font-size: 35px;
     }
     .section-video {
-        width: 400px !important;
-        height: 390px;
+        width: 340px !important;
+        height: 350px;
+        transform: scale(.9) !important;
         animation: bounceUp 1s ease infinite alternate;
     }
     .image-bdrop-about {
@@ -314,6 +316,50 @@ a {
     border-radius: 10px;
     padding-block: 5px;
 }
+
+/* dashboard design */
+.box-info-dashboard {
+    width: 160px;
+    height: 100px;
+    background-color: #27005D;
+    border-bottom: 5px solid yellow;
+}
+.box-info-dashboard h1 {
+    font-size: 2em;
+} 
+.box-info-dashboard p {
+    font-size: .9em;
+} 
+.product-all {
+    border-collapse: collapse;
+    width: 10%;
+    margin-inline: 0;
+    border: 1px solid black;
+  }
+
+  .product-all th, .product-all td {
+    padding: 8px;
+    text-align: left;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 130px;
+  }
+
+  .product-all th {
+    background-color: #333;
+    color: white;
+    font-weight: 800;
+  }
+  .product-table {
+    scroll-behavior: smooth;
+    transition: all 1s ease;
+  }
+  .product-all th:first-child, .product-all td:first-child {
+    border-left: 1px solid black;
+  }
 
 /** footer design **/
 footer {
