@@ -39,7 +39,7 @@ const Nav = ({content}) => {
               </div>
             </div>
           </div>
-          <div className="col py-3">
+          <div className="col w-100 overflow-hidden py-3">
             {content}
           </div>
         </div>

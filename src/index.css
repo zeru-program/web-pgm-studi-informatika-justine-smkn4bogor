@@ -360,6 +360,9 @@ a {
   .product-all th:first-child, .product-all td:first-child {
     border-left: 1px solid black;
   }
+  .temp-update-class {
+      background: rgba(0,0,0,.3);
+  }
 
 /** footer design **/
 footer {

@@ -7,6 +7,7 @@ import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import BackToTop from "../components/BackToTop"
 import Splash from '../components/Splash'
+import useCmsData from '../components/UseCmsData';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import ReadMoreReact from 'read-more-react'
@@ -25,8 +26,11 @@ import CountUp from 'react-countup';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-const HeroBanner = () => {
+const db = "https://gebyar-it-ftsuikabogor-justine-default-rtdb.firebaseio.com/";
 
+
+const HeroBanner = () => {
+    const { dataCms } = useCmsData();
     return (
       <>
         <header
@@ -79,12 +83,11 @@ const HeroBanner = () => {
               borderRadius: "25px",
             }}
           >
-            <h1 className="fw-bold container">UIKA Bogor.</h1>
+            <h1 className="fw-bold container">
+              {dataCms["home1_title"] || "FTS Uika Bogor"}
+            </h1>
             <p className="container wow fadeIn">
-              Universitas Ibn Khaldun Bogor atau disingkat UIKA adalah sebuah
-              perguruan tinggi Islam swasta di Kota Bogor, Jawa Barat, yang
-              didirikan oleh para tokoh ulama di Bogor dan merupakan kampus
-              Islam tertua di kota tersebut.
+              {dataCms["home2_desk"] || "Universitas Ibn Khaldun Bogor atau disingkat UIKA adalah sebuah perguruan tinggi Islam swasta di Kota Bogor, Jawa Barat, yang didirikan oleh para tokoh ulama di Bogor dan merupakan kampus Islam tertua di kota tersebut."}
             </p>
             <video controls src="/video.mp4" className="my-3"></video>
             <a
@@ -113,6 +116,8 @@ const HeroBanner = () => {
 }
 
 const About = () => {
+    const { dataCms } = useCmsData();
+  
     const [isExpanded,
         setIsExpanded] = useState(false);
 
@@ -128,7 +133,7 @@ const About = () => {
         <div className="container-fluid contain-about-teks d-flex flex-column my-3">
             <img src="/dekan-fts.png" className='img-about' style={{transform: "scaleX(-1)"}} alt="" />
           <h1 className="text-pm fw-bold m-0" data-aos="fade-up">
-            About PSTI
+            {dataCms["about1_title"] || "About PSTI"}
           </h1>
           <div>
             {/* Paragraf pertama - Selalu terlihat */}
@@ -231,26 +236,26 @@ const About = () => {
         <div className='my-3 d-flex flex-wrap justify-content-center gap-3'>
             <div className="box-counter flex-column" data-aos="fade-up">
                 <h1 className="m-0 fw-bold">
-                <CountUp end={20000} scrollSpyOnce={true} enableScrollSpy={true} /> 
+                <CountUp end={dataCms["about2_jumlahMahasiswa"] || 20000} scrollSpyOnce={true} enableScrollSpy={true} /> 
                 +
                 </h1>
                 <p className="m-0">Jumlah Mahasiswa</p>
             </div>
             <div className="box-counter flex-column" data-aos="fade-in">
                 <h1 className="m-0 fw-bold">
-                <CountUp end={78} scrollSpyOnce={true} enableScrollSpy={true} /> 
+                <CountUp end={dataCms["about3_jumlahDosen"] || 78} scrollSpyOnce={true} enableScrollSpy={true} /> 
                 </h1>
                 <p className="m-0">Jumlah Dosen</p>
             </div>
             <div className="box-counter flex-column" data-aos="fade-in">
                 <h1 className="m-0 fw-bold">
-                <CountUp end={7} scrollSpyOnce={true} enableScrollSpy={true} /> 
+                <CountUp end={dataCms["about4_jumlahProdi"] || 7} scrollSpyOnce={true} enableScrollSpy={true} /> 
                 </h1>
                 <p className="m-0">Jumlah Prodi</p>
             </div>
             <div className="box-counter flex-column" data-aos="fade-in">
                 <h1 className="m-0 fw-bold">
-                <CountUp end={5000} scrollSpyOnce={true} enableScrollSpy={true} /> 
+                <CountUp end={dataCms["about5_jumlahAlumni"] || 5000} scrollSpyOnce={true} enableScrollSpy={true} /> 
                 +
                 </h1>
                 <p className="m-0">Jumlah Alumni</p>
@@ -271,6 +276,7 @@ const About = () => {
 }
 
 const VisiMisi = () => {
+    const { dataCms } = useCmsData(); 
     return (
       <section
         className="d-flex flex-column visimisi-section  pt-5 text-center text-pm"
@@ -279,18 +285,17 @@ const VisiMisi = () => {
       >
         <div className="d-flex flex-column">
           <h1 data-aos="fade-up" className="m-0 fw-bold">
-            Visi
+           {dataCms["about7_titleVisi"] || "Visi"}
           </h1>
           <p
             data-aos="fade-up"
             data-aos-delay="500"
             className="mb-5 container-fluid"
           >
-            Menjadi Program Studi Terkemuka Bidang Informatika Dengan Lulusan
-            Islami Berdaya Saing Regional Tahun 2025.
+            {dataCms["about8_visi"] || "Menjadi Program Studi Terkemuka Bidang Informatika Dengan Lulusan Islami Berdaya Saing Regional Tahun 2025."}
           </p>
           <h1 className="m-0 fw-bold" data-aos="fade-up">
-            Misi
+              {dataCms["about9_titleMisi"] || "Misi"}
           </h1>
           <div
             className="w-100 mb-5 mt-2 con-misi text-light d-flex gap-3 overflow-x-auto"
@@ -300,35 +305,34 @@ const VisiMisi = () => {
             <div className="box-misi py-2 container mx-2 d-flex flex-column">
               <span className="fw-bold">I.</span>
               <p className="m-0">
-                Meningkatkan kualitas Tridharma Program Studi secara
-                berkelanjutan.
+               {dataCms["about10_misi1"] || "Meningkatkan kualitas Tridharma Program Studi secara berkelanjutan."}
               </p>
             </div>
 
             <div className="box-misi py-2 container mx-2 d-flex flex-column">
               <span className="fw-bold">II.</span>
               <p className="m-0">
-                Mengembangkan budaya inovasi dalam ilmu pengetahuan.
+               {dataCms["about11_misi2"] || "Mengembangkan budaya inovasi dalam ilmu pengetahuan."}
               </p>
             </div>
 
             <div className="box-misi py-2 container mx-2 d-flex flex-column">
               <span className="fw-bold">III.</span>
               <p className="m-0">
-                Meningkatkan akses dan peran program studi bagi peningkatan
-                taraf dan kualitas hidup masyarakat.
+               {dataCms["about12_misi3"] || "Meningkatkan akses dan peran program studi bagi peningkatan taraf dan kualitas hidup masyarakat."}
+                
               </p>
             </div>
 
             <div className="box-misi py-2 container mx-2 d-flex flex-column">
               <span className="fw-bold">IV.</span>
               <p className="m-0">
-                Meningkatkan kualitas penyelenggaraan tata pamong.
+               {dataCms["about13_misi4"] || "Meningkatkan kualitas penyelenggaraan tata pamong."}
               </p>
             </div>
           </div>
           <h1 data-aos="fade-up" className="m-0 text-pm fw-bold">
-            Tujuan
+            {dataCms["about14_title"] || "Tujuan"}
           </h1>
           <div className="w-100 mb-5 mt-2 text-light flex-wrap justify-content-center d-flex gap-3">
             <div
@@ -338,8 +342,8 @@ const VisiMisi = () => {
             >
               <img src="/hijab.svg" className="icon-tujuan" />
               <p className="m-0 mx-3">
-                Menghasilkan lulusan islami berdaya saing regional melalui
-                pelaksanaan kegiatan Tridharma.
+               {dataCms["about15_tujuan1"] || "Menghasilkan lulusan islami berdaya saing regional melalui pelaksanaan kegiatan Tridharma."}
+                
               </p>
             </div>
 
@@ -350,11 +354,8 @@ const VisiMisi = () => {
             >
               <img src="/handshake.svg" className="icon-tujuan" />
               <p className="m-0 mx-3">
-                Menjalin kemitraan dengan para pihak untuk menghasilkan produk
-                penelitian inovatif bidang informatika yang berbasis
-                laboratorium keilmuan Geoinformatics Spasial, Software
-                Engineering, Computer System and Networking, dan Artificial
-                Intelligence.
+               {dataCms["about16_tujuan2"] || "Menjalin kemitraan dengan para pihak untuk menghasilkan produk penelitian inovatif bidang informatika yang berbasis laboratorium keilmuan Geoinformatics Spasial, Software Engineering, Computer System and Networking, dan Artificial Intelligence."}
+                
               </p>
             </div>
 
@@ -365,10 +366,7 @@ const VisiMisi = () => {
             >
               <img src="/book.svg" className="icon-tujuan" />
               <p className="m-0 mx-3">
-                Mengembangkan ilmu pengetahuan dan teknologi serta budaya
-                inovasi melalui percepatan penyerapan teknologi baru dan
-                penyesuaian kurikulum agar dapat menjadi Program Studi
-                terkemuka.
+               {dataCms["about17_tujuan3"] || "Mengembangkan ilmu pengetahuan dan teknologi serta budaya inovasi melalui percepatan penyerapan teknologi baru dan penyesuaian kurikulum agar dapat menjadi Program Studi terkemuka."}
               </p>
             </div>
 
@@ -379,10 +377,8 @@ const VisiMisi = () => {
             >
               <img src="/graduation.svg" className=" icon-tujuan" />
               <p className="m-0 mx-3">
-                Mengembangkan sistem tata pamong yang efektif dan efisien demi
-                keberlanjutan serta penguatan kelembagaan Program Studi secara
-                terencana dengan keluaran (output) dan dampak (outcome) yang
-                jelas.
+               {dataCms["about18_tujuan4"] || "Mengembangkan sistem tata pamong yang efektif dan efisien demi keberlanjutan serta penguatan kelembagaan Program Studi secara terencana dengan keluaran (output) dan dampak (outcome) yang jelas."}
+                
               </p>
             </div>
           </div>
@@ -483,6 +479,7 @@ const Target = () => {
 }
 
 const Prestasi = () => {
+    const { dataCms } = useCmsData(); 
     const prevRef = useRef(null);
     const nextRef = useRef(null);
     return (
@@ -492,11 +489,10 @@ const Prestasi = () => {
       >
         <div className="d-flex text-pm flex-column">
           <h1 className="m-0 container fw-bold" data-aos="fade-up">
-            Prestasi Kami
+           {dataCms["about19_title"] || "Prestasi Kami"}
           </h1>
           <p className="m-0 container" data-aos="fade-up" data-aos-delay="500">
-            Prestasi dari mahasiswa program studi teknik informatika fakultas
-            teknik dan sains UIKA Bogor.
+           {dataCms["about20_desk"] || "Prestasi dari mahasiswa program studi teknik informatika fakultas teknik dan sains UIKA Bogor."}
           </p>
           <Swiper
             modules={[Navigation]}
@@ -731,6 +727,7 @@ const Contact = () => {
 }
 
 const Home = () => {
+    
     useEffect(() => {
         AOS.init({
             duration: 1000,

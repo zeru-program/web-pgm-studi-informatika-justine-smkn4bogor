@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "../Navbar.css";
+import useCmsData from '../components/UseCmsData';
 import Swal from 'sweetalert2'
 
 const Footer = () => {
+    const { dataCms } = useCmsData(); 
     const [validasiErr, setValidasiErr] = useState(false);
     const [iptNama, setIptNama] = useState("");
     const [iptEmail, setIptEmail] = useState("");
@@ -66,9 +68,11 @@ const Footer = () => {
       <footer className="py-3 pt-4 container-fluid">
         <div className="d-flex flex-wrap contain-fo">
           <div className="d-flex flex-column fo-1">
-            <h1 className="m-0 fw-bold">TI UIKA Bogor.</h1>
+            <h1 className="m-0 fw-bold">
+           {dataCms["footer1_title"] || "TI FTS UIKA Bogor."}
+            </h1>
             <p className="m-0 desk-footer">
-              Fakultas Teknik dan Sains Universitas Ibn Khaldun Bogor (FTS-UIKA) Bogor berdiri sejak tahun 1974 dengan nama Fakultas Teknik (FT-UIKA). Seiring dengan perkembangan regulasi dan pengembangan institusi maka sejak tahun 2018 Fakultas Teknik berganti nama menjadi Fakultas Teknik dan Sains melalui Keputusan Rektor Nomor: 010/K.13/IIIa/KR-PNFT/UIKA/2018.
+           {dataCms["footer2_desk"] || "Fakultas Teknik dan Sains Universitas Ibn Khaldun Bogor (FTS-UIKA) Bogor berdiri sejak tahun 1974 dengan nama Fakultas Teknik (FT-UIKA). Seiring dengan perkembangan regulasi dan pengembangan institusi maka sejak tahun 2018 Fakultas Teknik berganti nama menjadi Fakultas Teknik dan Sains melalui Keputusan Rektor Nomor: 010/K.13/IIIa/KR-PNFT/UIKA/2018."}
             </p>
           </div>
           <div className="d-flex flex-column fo-2" style={{marginRight: "50px"}}>
@@ -106,14 +110,15 @@ const Footer = () => {
           <div className="mb-3 d-flex flex-column fo-3">
             <h2 className="m-0">Alamat</h2>
             <span className="mt-3 desk-footer">
-              📍 Jl. Sholeh Iskandar, RT.01/RW.10, Kedungbadak, Kec. Tanah
-              Sereal, Kota Bogor, Jawa Barat 16162
+           {dataCms["footer3_alamat"] || "📍 Jl. Sholeh Iskandar, RT.01/RW.10, Kedungbadak, Kec. Tanah Sereal, Kota Bogor, Jawa Barat 16162"}
             </span>
           </div>
         </div>
         <hr className="" />
         <p className="text-center mb-0 mt-4">
-          COPYRIGHT © 2024 PSTI UIKA BOGOR BY JUSTINE.
+        
+           {dataCms["footer4_cp"] || "COPYRIGHT © 2024 PSTI UIKA BOGOR BY JUSTINE."}
+          
         </p>
       </footer>
     );
