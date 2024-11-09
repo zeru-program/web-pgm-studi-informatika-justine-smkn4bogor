@@ -8,6 +8,7 @@ import Register from "./pages/Register"
 import Logout from "./pages/Logout"
 import DashboardHome from "./pages/DashboardHome"
 import DashboardCms from "./pages/DashboardCms"
+import DashboardPrestasi from "./pages/DashboardPrestasi"
 
 
 function RouterApp() {
@@ -22,6 +23,7 @@ function RouterApp() {
         <Route path='/logout' element={<Logout/>} />
         <Route path='/dashboard' element={<DashboardHome/>} />
         <Route path='/dashboard/cms' element={<DashboardCms/>} />
+        <Route path='/dashboard/prestasi' element={<DashboardPrestasi/>} />
         <Route path='*' element={<F404/>} />
       </Routes>
     </Router>

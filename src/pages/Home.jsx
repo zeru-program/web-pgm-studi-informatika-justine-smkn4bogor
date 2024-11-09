@@ -8,6 +8,8 @@ import Footer from "../components/Footer"
 import BackToTop from "../components/BackToTop"
 import Splash from '../components/Splash'
 import useCmsData from '../components/UseCmsData';
+import FetchPrestasiData from '../components/FetchPrestasiData';
+import FetchBeritaData from '../components/FetchBeritaData';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import ReadMoreReact from 'read-more-react'
@@ -480,6 +482,7 @@ const Target = () => {
 
 const Prestasi = () => {
     const { dataCms } = useCmsData(); 
+    const { dataPrestasi } = FetchPrestasiData();
     const prevRef = useRef(null);
     const nextRef = useRef(null);
     return (
@@ -519,6 +522,24 @@ const Prestasi = () => {
               },
             }}
           >
+            {
+              Array.isArray(dataPrestasi) && dataPrestasi.map((pres, index) => (
+            <SwiperSlide className="swiper-prestasi container" key={index}>
+              <div className="box-prestasi shadow-sm">
+                <img src={pres.img} alt={pres.title} />
+                <h2 className="text-light mb-0 mt-3 container fw-bold">
+                  {pres.title}
+                </h2>
+                <p className="m-0 container text-light">
+                  {pres.lomba}
+                </p>
+                <p className="mt-3 pt-5 container text-light">
+                  {pres.lokasi} - {pres.tanggal}
+                </p>
+              </div>
+            </SwiperSlide>
+                 ))
+            }
             <SwiperSlide className="swiper-prestasi container">
               <div className="box-prestasi shadow-sm">
                 <img src="https://www.lead.co.id/wp-content/uploads/2021/12/IMG_20211215_110409.jpg" alt="" />
@@ -726,6 +747,50 @@ const Contact = () => {
     );
 }
 
+const Berita = () => {
+   const { dataBerita } = FetchBeritaData();
+   const handleClickBerita = () => {
+    }
+    return (
+      <section
+        className="d-flex flex-column berita-section mb-4 py-5 text-pm"
+        id="berita"
+      >
+        <div className="d-flex container-fluid flex-column">
+          <h1 data-aos="fade-up" className="m-0 container fw-bold">
+            Berita Terkini
+          </h1>
+          <div className="mt-3 gap-3 d-flex contain-berita" data-aos="fade-up" data-aos-delay="500" >
+              {
+              Array.isArray(dataBerita) && dataBerita.map((berita, index) => (
+              <div className="box-berita shadow" onClick={() => handleClickBerita(berita.id_berita)}>
+                  <img src={berita.img} alt={berita.title} />
+                  <div>
+                    <h1 className="mb-0 sub-contain-berita">
+                        {berita.title}
+                    </h1>
+                      <p className="mb-0">
+                        {berita.deskripsi}  
+                      </p>
+                  <p className="tanggal-berita-sm">{berita.lokasi} - {berita.tanggal}</p>
+                  </div>
+               </div>
+                 ))
+            }
+              <div className="box-berita shadow" onClick={() => handleClickBerita()}>
+                  <img src="/bdrop-uika2.jpeg" alt="" />
+                  <div>
+                    <h1 className="mb-0 sub-contain-berita">Title berita</h1>
+                      <p className="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, autem.</p>
+                  <p className="tanggal-berita-sm">Tempat - 2024</p>
+                  </div>
+               </div>
+          </div>
+        </div>
+      </section>
+    );
+}
+
 const Home = () => {
     
     useEffect(() => {
@@ -744,6 +809,7 @@ const Home = () => {
         <Target />
         <Prestasi />
         <Contact />
+        <Berita />
         <Footer />
         <BackToTop />
       </>

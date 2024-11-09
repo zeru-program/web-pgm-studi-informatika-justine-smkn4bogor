@@ -26,7 +26,7 @@ const Navbar = () => {
     return (
     <>
     <header className="header-nav">
-        <nav className="navbar navbar-expand-lg bg-light" style={{paddingBottom: padBot}}>
+        <nav className="navbar navbar-expand-lg" style={{paddingBottom: padBot}}>
             <div className="container-fluid p-0">
                 <a className="navbar-brand d-flex gap-2 justify-content-center align-items-center mx-3 px-1" href="/"><img src="/FTS.png" style={{width: "35px"}} id="img-fts-nav" /></a>
                 <button className="navbar-toggler mx-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded={!statusNav} aria-label="Toggle navigation" onClick={handleNav}>

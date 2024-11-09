@@ -238,7 +238,30 @@ a {
 .contact-section span {
     font-size: 14px;
 }
-
+/** berita design **/
+.contain-berita {
+    width: 100%;
+}
+.box-berita {
+    background: white;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: all .3s ease;
+}
+.box-berita:hover {
+    background: #27005D;
+    color: white;
+    transform: scale(.95);
+}
+.box-berita img {
+    width: 130px;
+    height: 100px;
+}
+.tanggal-berita-sm {
+    position: absolute;
+    bottom: -12px;
+}
 
 /*** responsive ***/
 /** max 770px its a mobile view **/
@@ -261,13 +284,30 @@ a {
     .hero-home {
         background-attachment: fixed;
     }
+    .contain-berita {
+        flex-direction: column;
+    }
+    .box-berita {
+        width: 100%;
+        display: flex;
+        height: auto;
+    }
+    .box-berita h1 {
+        margin-top: 7px;
+        margin-left: 10px;
+        font-size: 1.3em;
+    }
+    .box-berita p {
+        margin-left: 10px;
+        font-size: .8em;
+    }
 }
 @media screen and (min-width: 770px) {
     .hero-home {
         height: 110vh;
     }
     .contain-fo {
-        justify-content: space-arround;
+        justify-content: center;
     }
     .fo-1 {
         width: 35%;
@@ -296,6 +336,28 @@ a {
     .contain-about-teks {
         text-align: center;
         align-items: center;
+    }
+    .contain-berita {
+        flex-wrap: wrap;
+        margin-left: 10px;
+    }
+    .box-berita {
+        width: 300px;
+        height: 300px;
+    }
+    .box-berita img {
+        width: 100%;
+        height: 160px;
+    }
+    .box-berita h1 {
+        margin-top: 8px;
+        margin-left: 8px;
+        font-size: 1.5em;
+    }
+    .box-berita p {
+        margin-left: 8px;
+        font-size: .9em;
+        margin-right: 4px;
     }
 }
 

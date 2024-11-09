@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 
 function useCmsData() {
     const [dataCms, setDataCms] = useState([]);
-
+    const db = "https://gebyar-it-ftsuikabogor-justine-default-rtdb.firebaseio.com/"
     useEffect(() => {
-        fetch("https://gebyar-it-ftsuikabogor-justine-default-rtdb.firebaseio.com/cms.json")
+        fetch(db + "cms.json")
             .then((res) => res.json())
             .then((data) => setDataCms(data));
     }, []);

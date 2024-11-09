@@ -20,6 +20,16 @@ const Nav = ({content}) => {
                     <i className="fs-4 bi-stack" /> <span className="ms-1 d-none d-sm-inline">CMS</span>
                   </a>
                 </li>
+                <li className="nav-item">
+                  <a href="/dashboard/cms" className="nav-link align-middle px-0">
+                    <i className="fs-4 bi-stack" /> <span className="ms-1 d-none d-sm-inline">CRUD Prestasi</span>
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a href="/dashboard/cms" className="nav-link align-middle px-0">
+                    <i className="fs-4 bi-stack" /> <span className="ms-1 d-none d-sm-inline">CRUD BERITA</span>
+                  </a>
+                </li>
               </ul>
               <hr />
               <div className="dropdown pb-4">

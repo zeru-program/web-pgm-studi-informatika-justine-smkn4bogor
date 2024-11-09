@@ -11,11 +11,13 @@
   },
   "dependencies": {
     "aos": "^2.3.4",
+    "bootstrap": "^5.3.3",
     "react": "^18.3.1",
     "react-countup": "^6.5.3",
     "react-dom": "^18.3.1",
     "react-login-page": "^1.0.4",
     "react-router-dom": "^6.27.0",
+    "react-show-more-button": "^1.0.0",
     "react-type-animation": "^3.2.0",
     "react-wavify": "^1.11.1",
     "read-more-react": "^1.0.10",
