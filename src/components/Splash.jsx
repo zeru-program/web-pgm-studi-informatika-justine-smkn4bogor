@@ -12,7 +12,7 @@ const Splash = () => {
     }, [])
   return (
     <div className='w-100 vh-100 position-fixed start-0 top-0 justify-content-center align-items-center' style={{display: none ? "none" : "flex",backdropFilter: "blur(2px)", zIndex: "999999999", background: "rgba(225,225,225,.1)"}}>
-       <span class="loader" style={{display: dispAn ? "flex" : "none"}}></span>
+       <span className="loader" style={{display: dispAn ? "flex" : "none"}}></span>
     </div>
   )
 }

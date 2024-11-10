@@ -6,7 +6,7 @@ function FetchBeritaData() {
     useEffect(() => {
         fetch(db + "berita.json")
             .then((res) => res.json())
-            .then((data) => setDataBerita(data));
+            .then((data) => setDataBerita(Object.values(data)));
     }, []);
 
     return { dataBerita, setDataBerita };

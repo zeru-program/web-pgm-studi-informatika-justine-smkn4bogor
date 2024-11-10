@@ -494,6 +494,8 @@ const Prestasi = () => {
           <h1 className="m-0 container fw-bold" data-aos="fade-up">
            {dataCms["about19_title"] || "Prestasi Kami"}
           </h1>
+          
+         
           <p className="m-0 container" data-aos="fade-up" data-aos-delay="500">
            {dataCms["about20_desk"] || "Prestasi dari mahasiswa program studi teknik informatika fakultas teknik dan sains UIKA Bogor."}
           </p>
@@ -522,160 +524,25 @@ const Prestasi = () => {
               },
             }}
           >
-            {
+             {
               Array.isArray(dataPrestasi) && dataPrestasi.map((pres, index) => (
-            <SwiperSlide className="swiper-prestasi container" key={index}>
-              <div className="box-prestasi shadow-sm">
-                <img src={pres.img} alt={pres.title} />
-                <h2 className="text-light mb-0 mt-3 container fw-bold">
-                  {pres.title}
-                </h2>
-                <p className="m-0 container text-light">
-                  {pres.lomba}
-                </p>
-                <p className="mt-3 pt-5 container text-light">
-                  {pres.lokasi} - {pres.tanggal}
-                </p>
-              </div>
-            </SwiperSlide>
-                 ))
+                <SwiperSlide className="swiper-prestasi container" key={index}>
+                  <div className="box-prestasi shadow-sm">
+                    <img src={pres.img} alt={pres.title} />
+                    <h2 className="text-light mb-0 mt-3 container fw-bold">
+                      {pres.title}
+                    </h2>
+                    <p className="m-0 container text-light">
+                      {pres.lomba}
+                    </p>
+                    <p className={`container date-year text-light`}>
+                      {pres.lokasi} - {pres.tanggal}
+                    </p>
+                  </div>
+                </SwiperSlide>
+              ))
             }
-            <SwiperSlide className="swiper-prestasi container">
-              <div className="box-prestasi shadow-sm">
-                <img src="https://www.lead.co.id/wp-content/uploads/2021/12/IMG_20211215_110409.jpg" alt="" />
-                <h2 className="text-light mb-0 mt-3 container fw-bold">
-                  Juara 1
-                </h2>
-                <p className="m-0 container text-light">
-                  Lomba Gelaran Inovasi Daerah (GID)
-                </p>
-                <p className="mt-3 pt-5 container text-light">
-                  Bappedalitbang Kabupaten Bogor - 2020
-                </p>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="swiper-prestasi container">
-              <div className="box-prestasi shadow-sm">
-                <img src="https://bogordaily.net/wp-content/uploads/2022/11/IMG-20221108-WA0051.jpg" alt="" />
-                <h2 className="text-light mb-0 mt-3 container fw-bold">
-                  Juara 2
-                </h2>
-                <p className="m-0 container text-light">
-                  Lomba Gelaran Inovasi Daerah (GID)
-                </p>
-                <p className="mt-3 pt-5 container text-light">
-                  Bappedalitbang Kabupaten Bogor - 2020
-                </p>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="swiper-prestasi container">
-              <div className="box-prestasi shadow-sm">
-                <img src="https://bogordaily.net/wp-content/uploads/2022/11/IMG-20221108-WA0051.jpg" alt="" />
-                <h2 className="text-light mb-0 mt-3 container fw-bold">
-                  Juara 3
-                </h2>
-                <p className="m-0 container text-light">
-                  Lomba Gelaran Inovasi Daerah (GID)
-                </p>
-                <p className="mt-3 pt-5 container text-light">
-                  Bappedalitbang Kabupaten Bogor - 2020
-                </p>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="swiper-prestasi container">
-              <div className="box-prestasi shadow-sm">
-                <img src="https://lldikti13.kemdikbud.go.id/wp-content/uploads/2023/05/IMG_6118-scaled.jpg" alt="" />
-                <h2 className="text-light mb-0 mt-3 container fw-bold">
-                  13 Besar
-                </h2>
-                <p className="m-0 container text-light">
-                  Pemilihan Mahasiswa Berprestasi Tk. LLDIKTI Wilayah IV
-                </p>
-                <p className="mt-4 pt-2 container text-light">
-                  LLDIKTI Wilayah IV Jawa Barat & Banten - 2021
-                </p>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="swiper-prestasi container">
-              <div className="box-prestasi shadow-sm">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvNPnsC9jpYJ4zT4APrgu6MU4JaWVJ_yANIw&s" alt="" />
-                <h2 className="text-light mb-0 mt-3 container fw-bold">
-                  Juara 1
-                </h2>
-                <p className="m-0 container text-light">Lomba Karya Tulis</p>
-                <p className="mt-3 pt-5 container text-light">
-                  Agri-Informatika JIKA - 2021
-                </p>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="swiper-prestasi container">
-              <div className="box-prestasi shadow-sm">
-                <img src="/bdrop-uika2.jpeg" alt="" />
-                <h2 className="text-light mb-0 mt-3 container fw-bold">
-                  Medali Perunggu
-                </h2>
-                <p className="m-0 container text-light">
-                  Unjuk Gelar Porprov 2022
-                </p>
-                <p className="mt-3 pt-5 container text-light">
-                  Porprov XIV 2022 KONI Jawa Barat - 2022
-                </p>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="swiper-prestasi container">
-              <div className="box-prestasi shadow-sm">
-                <img src="/bdrop-uika2.jpeg" alt="" />
-                <h2 className="text-light mb-0 mt-3 container fw-bold">
-                  Medali Perunggu
-                </h2>
-                <p className="m-0 container text-light">
-                  Lomba Berbaris Jarak Pendek 800 Meter Mix Porprov 2022
-                </p>
-                <p className="mt-4 pt-4 container text-light">
-                  Porprov XIV 2022 KONI Jawa Barat - 2022
-                </p>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="swiper-prestasi container">
-              <div className="box-prestasi shadow-sm">
-                <img src="/bdrop-uika2.jpeg" alt="" />
-                <h2 className="text-light mb-0 mt-3 container fw-bold">
-                  Medali Perak
-                </h2>
-                <p className="m-0 container text-light">
-                  Lomba Berbaris Jarak Pendek 800 Meter Mix Porprov 2022
-                </p>
-                <p className="mt-4 pt-4 container text-light">
-                  Porprov XIV 2022 KONI Jawa Barat - 2022
-                </p>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="swiper-prestasi container">
-              <div className="box-prestasi shadow-sm">
-                <img src="/bdrop-uika2.jpeg" alt="" />
-                <h2 className="text-light mb-0 mt-3 container fw-bold">
-                  Juara 1
-                </h2>
-                <p className="m-0 container text-light">
-                  Gelaran Inovasi Daerah (GID)
-                </p>
-                <p className="mt-3 pt-5 container text-light">
-                  Bappedalitbang Kabupaten Bogor - 2022
-                </p>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="swiper-prestasi container">
-              <div className="box-prestasi shadow-sm">
-                <img src="/bdrop-uika2.jpeg" alt="" />
-                <h2 className="text-light mb-0 mt-3 container fw-bold">
-                  Pertukaran Pelajar ke Negara Malaysia
-                </h2>
-                <p className="m-0 container text-light">IISMA 2022</p>
-                <p className="mt-4 pt-2 container text-light">
-                  KEMDIKBUDRISTEKDIKTI - 2022
-                </p>
-              </div>
-            </SwiperSlide>
+           
             <SwiperSlide></SwiperSlide>
           </Swiper>
           <div className="d-flex mt-2 container-fluid gap-2">
@@ -712,10 +579,10 @@ const Contact = () => {
             width="100%"
             height="300"
             style={{ border: "0" }}
-            allowfullscreen=""
+            allowFullScreen=""
             className="mt-1"
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
+            referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
           <hr />
           <div
@@ -749,8 +616,10 @@ const Contact = () => {
 
 const Berita = () => {
    const { dataBerita } = FetchBeritaData();
-   const handleClickBerita = () => {
+   const handleClickBerita = (param) => {
+     window.location.href = "/berita/" + param
     }
+   
     return (
       <section
         className="d-flex flex-column berita-section mb-4 py-5 text-pm"
@@ -777,14 +646,6 @@ const Berita = () => {
                </div>
                  ))
             }
-              <div className="box-berita shadow" onClick={() => handleClickBerita()}>
-                  <img src="/bdrop-uika2.jpeg" alt="" />
-                  <div>
-                    <h1 className="mb-0 sub-contain-berita">Title berita</h1>
-                      <p className="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, autem.</p>
-                  <p className="tanggal-berita-sm">Tempat - 2024</p>
-                  </div>
-               </div>
           </div>
         </div>
       </section>

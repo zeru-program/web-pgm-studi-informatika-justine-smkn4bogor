@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function FetchPrestasiData() {
     const [dataPrestasi, setDataPrestasi] = useState([]);
@@ -6,7 +6,7 @@ function FetchPrestasiData() {
     useEffect(() => {
         fetch(db + "prestasi.json")
             .then((res) => res.json())
-            .then((data) => setDataPrestasi(data));
+            .then(data => setDataPrestasi(Object.values(data)));
     }, []);
 
     return { dataPrestasi, setDataPrestasi };

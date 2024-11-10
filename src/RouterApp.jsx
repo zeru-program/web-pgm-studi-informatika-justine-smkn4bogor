@@ -17,6 +17,7 @@ function RouterApp() {
     <Router>
       <Routes>
         <Route path='/' element={<Home/>} />
+        <Route path='/berita/:id' element={<Home/>} />
         <Route path='/bergabung' element={<Join/>} />
         <Route path='/login' element={<LoginPage/>} />
         <Route path='/register' element={<Register/>} />
