@@ -21,13 +21,13 @@ const Nav = ({content}) => {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a href="/dashboard/cms" className="nav-link align-middle px-0">
-                    <i className="fs-4 bi-stack" /> <span className="ms-1 d-none d-sm-inline">CRUD Prestasi</span>
+                  <a href="/dashboard/prestasi" className="nav-link align-middle px-0">
+                    <i className="fs-4 bi-cloud" /> <span className="ms-1 d-none d-sm-inline">CRUD Prestasi</span>
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a href="/dashboard/cms" className="nav-link align-middle px-0">
-                    <i className="fs-4 bi-stack" /> <span className="ms-1 d-none d-sm-inline">CRUD BERITA</span>
+                  <a href="/dashboard/berita" className="nav-link align-middle px-0">
+                    <i className="fs-4 bi-newspaper" /> <span className="ms-1 d-none d-sm-inline">CRUD BERITA</span>
                   </a>
                 </li>
               </ul>

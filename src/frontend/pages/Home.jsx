@@ -7,9 +7,9 @@ import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import BackToTop from "../components/BackToTop"
 import Splash from '../components/Splash'
-import useCmsData from '../components/UseCmsData';
-import FetchPrestasiData from '../components/FetchPrestasiData';
-import FetchBeritaData from '../components/FetchBeritaData';
+import useCmsData from '../../backend/UseCmsData';
+import FetchPrestasiData from '../../backend/FetchPrestasiData';
+import FetchBeritaData from '../../backend/FetchBeritaData';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import ReadMoreReact from 'read-more-react'

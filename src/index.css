@@ -399,14 +399,14 @@ a {
 .box-info-dashboard p {
     font-size: .9em;
 } 
-.product-all {
+.product-all, .prestasi {
     border-collapse: collapse;
     width: 10%;
     margin-inline: 0;
     border: 1px solid black;
   }
 
-  .product-all th, .product-all td {
+  .product-all th, .product-all td, .prestasi th, .prestasi td {
     padding: 8px;
     text-align: left;
     border-right: 1px solid black;
@@ -417,16 +417,17 @@ a {
     width: 130px;
   }
 
-  .product-all th {
+  .product-all th, .prestasi th {
     background-color: #333;
     color: white;
     font-weight: 800;
   }
-  .product-table {
+  .product-table, #prestasi-table {
     scroll-behavior: smooth;
     transition: all 1s ease;
   }
-  .product-all th:first-child, .product-all td:first-child {
+  .product-all th:first-child, .product-all td:first-child,
+  .prestasi th:first-child, .prestasi td:first-child {
     border-left: 1px solid black;
   }
   .temp-update-class {

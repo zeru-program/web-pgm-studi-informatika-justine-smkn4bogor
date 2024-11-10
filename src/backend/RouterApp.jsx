@@ -1,14 +1,15 @@
 import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import Home from "./pages/Home"
-import F404 from "./pages/F404"
-import Join from "./pages/Join"
-import LoginPage from "./pages/LoginPage"
-import Register from "./pages/Register"
-import Logout from "./pages/Logout"
-import DashboardHome from "./pages/DashboardHome"
-import DashboardCms from "./pages/DashboardCms"
-import DashboardPrestasi from "./pages/DashboardPrestasi"
+import Home from "../frontend/pages/Home"
+import F404 from "../frontend/pages/F404"
+import Join from "../frontend/pages/Join"
+import LoginPage from "../frontend/pages/LoginPage"
+import Register from "../frontend/pages/Register"
+import Logout from "../frontend/pages/Logout"
+import DashboardHome from "../frontend/pages/DashboardHome"
+import DashboardCms from "../frontend/pages/DashboardCms"
+import DashboardPrestasi from "../frontend/pages/DashboardPrestasi"
+import DashboardBerita from "../frontend/pages/DashboardBerita"
 
 
 function RouterApp() {
@@ -25,6 +26,7 @@ function RouterApp() {
         <Route path='/dashboard' element={<DashboardHome/>} />
         <Route path='/dashboard/cms' element={<DashboardCms/>} />
         <Route path='/dashboard/prestasi' element={<DashboardPrestasi/>} />
+        <Route path='/dashboard/berita' element={<DashboardBerita/>} />
         <Route path='*' element={<F404/>} />
       </Routes>
     </Router>

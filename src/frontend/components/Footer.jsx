@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "../Navbar.css";
-import useCmsData from '../components/UseCmsData';
+import "../../Navbar.css";
+import useCmsData from '../../backend/UseCmsData';
 import Swal from 'sweetalert2'
 
 const Footer = () => {
