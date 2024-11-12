@@ -631,21 +631,26 @@ const Berita = () => {
           </h1>
           <div className="mt-3 gap-3 d-flex contain-berita" data-aos="fade-up" data-aos-delay="500" >
               {
-              Array.isArray(dataBerita) && dataBerita.map((berita, index) => (
-              <div className="box-berita shadow" onClick={() => handleClickBerita(berita.id_berita)}>
-                  <img src={berita.img} alt={berita.title} />
-                  <div>
-                    <h1 className="mb-0 sub-contain-berita">
+              Array.isArray(dataBerita) && dataBerita.length > 0 ? (
+                dataBerita.map((berita, index) => (
+                  <div className="box-berita shadow" onClick={() => handleClickBerita(berita.id_berita)} key={index}>
+                    <img src={berita.img} alt={berita.title} />
+                    <div>
+                      <h1 className="mb-0 sub-contain-berita">
                         {berita.title}
-                    </h1>
+                      </h1>
                       <p className="mb-0">
                         {berita.deskripsi}  
                       </p>
-                  <p className="tanggal-berita-sm">{berita.lokasi} - {berita.tanggal}</p>
+                      <p className="tanggal-berita-sm">{berita.lokasi} - {berita.tanggal}</p>
+                    </div>
                   </div>
-               </div>
-                 ))
+                ))
+              ) : (
+                <p>Belum ada berita..</p>
+              )
             }
+
           </div>
         </div>
       </section>

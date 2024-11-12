@@ -6,7 +6,7 @@ function FetchPrestasiData() {
     useEffect(() => {
         fetch(db + "prestasi.json")
             .then((res) => res.json())
-            .then(data => setDataPrestasi(Object.values(data)));
+            .then(data => setDataPrestasi(Object.entries(data).map(([key, value]) => ({ key, ...value }))))
     }, []);
 
     return { dataPrestasi, setDataPrestasi };

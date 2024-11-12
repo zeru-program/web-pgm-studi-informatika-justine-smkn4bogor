@@ -36,7 +36,9 @@ a {
 @keyframes bounceUp {
     0% {
         transform: translateY(7px);
-    } 100% {
+    }
+
+    100% {
         transform: translateY(-7px);
     }
 }
@@ -48,10 +50,10 @@ a {
     height: 48px;
     display: inline-block;
     position: relative;
-  }
-  .loader::after,
-  .loader::before {
-    content: '';  
+}
+.loader::after,
+.loader::before {
+    content: '';
     box-sizing: border-box;
     width: 48px;
     height: 48px;
@@ -60,29 +62,29 @@ a {
     left: 0;
     top: 0;
     animation: rotationBreak 3s ease-in-out infinite alternate;
-  }
-  .loader::after {
+}
+.loader::after {
     border-color: yellow;
     animation-direction: alternate-reverse;
-  }
-  
-  @keyframes rotationBreak {
+}
+
+@keyframes rotationBreak {
     0% {
-      transform: rotate(0);
+        transform: rotate(0);
     }
     25% {
-      transform: rotate(90deg);
+        transform: rotate(90deg);
     }
     50% {
-      transform: rotate(180deg);
+        transform: rotate(180deg);
     }
     75% {
-      transform: rotate(270deg);
+        transform: rotate(270deg);
     }
     100% {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-  }
+}
 .animate-img-splash {
     animation: imgSplash 3s ease-in-out;
 }
@@ -90,10 +92,14 @@ a {
     0% {
         transform: scale(8);
         opacity: .5;
-    } 60% {
+    }
+
+    60% {
         opacity: 1;
         transform: scale(1);
-    } 100% {
+    }
+
+    100% {
         opacity: 0;
         visibility: hidden;
     }
@@ -335,7 +341,7 @@ a {
         width: 300px !important;
     }
     .desk-footer {
-         width: 400px;
+        width: 400px;
     }
     .con-misi {
         justify-content: center;
@@ -395,44 +401,54 @@ a {
 }
 .box-info-dashboard h1 {
     font-size: 2em;
-} 
+}
 .box-info-dashboard p {
     font-size: .9em;
-} 
+}
 .product-all, .prestasi {
     border-collapse: collapse;
     width: 10%;
+    overflow: hidden;
     margin-inline: 0;
-    border: 1px solid black;
-  }
+    border: 1px solid rgba(0, 0, 255, 1);
+}
 
-  .product-all th, .product-all td, .prestasi th, .prestasi td {
+.product-all th, .product-all td, .prestasi th, .prestasi td {
     padding: 8px;
     text-align: left;
-    border-right: 1px solid black;
-    border-bottom: 1px solid black;
-    white-space: nowrap;
+    border-top: 1px solid rgba(0, 0, 255, 1);
+    white-space: wrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    width: 130px;
-  }
+    width: auto;
+}
+.product-all th {
+    width: 10px;
+}
 
-  .product-all th, .prestasi th {
-    background-color: #333;
-    color: white;
+.product-all th, .prestasi th {
+    background-color: rgba(0, 0, 255, .2);
+    color: rgba(0, 0, 255, 1);
     font-weight: 800;
-  }
-  .product-table, #prestasi-table {
+}
+.product-table, #prestasi-table {
     scroll-behavior: smooth;
     transition: all 1s ease;
-  }
-  .product-all th:first-child, .product-all td:first-child,
-  .prestasi th:first-child, .prestasi td:first-child {
-    border-left: 1px solid black;
-  }
-  .temp-update-class {
-      background: rgba(0,0,0,.3);
-  }
+}
+.product-all th:first-child, .product-all td:first-child,
+.prestasi th:first-child, .prestasi td:first-child {
+    border-left: 1px solid rgba(0, 0, 255, 1);
+}
+
+.temp-update-class {
+    background: rgba(0, 0, 255, .2);
+}
+.btn-sec-dash {
+    border-radius: 10px;
+    border: 0;
+    background: rgba(0, 0, 255, .2) !important;
+    color: rgba(0, 0, 255, 1) !important;
+}
 
 /** footer design **/
 footer {
@@ -452,39 +468,42 @@ footer p {
     flex-direction: column;
 }
 .feedback-input {
-  color:white;
-  font-weight:500;
-  font-size: 18px;
-  border-radius: 5px;
-  line-height: 22px;
-  background-color: transparent;
-  border:2px solid white;
-  transition: all 0.3s;
-  padding: 13px;
-  margin-top: 15px;
-  margin-bottom: 5px;
-  width:100%;
-  box-sizing: border-box;
-  outline:0;
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+    border-radius: 5px;
+    line-height: 22px;
+    background-color: transparent;
+    border: 2px solid white;
+    transition: all 0.3s;
+    padding: 13px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: 0;
 }
 
 textarea {
-  height: 150px;
-  line-height: 150%;
-  resize:vertical;
+    height: 150px;
+    line-height: 150%;
+    resize: vertical;
 }
 
 [type="submit"] {
-  width: auto;
-  background:transparent;
-  border-radius:5px;
-  border: 2px solid white;
-  cursor:pointer;
-  color:white;
-  font-size:24px;
-  padding-top:10px;
-  padding-bottom:10px;
-  transition: all 0.3s;
-  margin-top:-4px;
+    width: auto;
+    background: transparent;
+    border-radius: 5px;
+    border: 2px solid white;
+    cursor: pointer;
+    color: white;
+    font-size: 24px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: all 0.3s;
+    margin-top: -4px;
 }
-[type="submit"]:hover { background:white; color: black; }
+[type="submit"]:hover {
+    background: white;
+    color: black;
+}

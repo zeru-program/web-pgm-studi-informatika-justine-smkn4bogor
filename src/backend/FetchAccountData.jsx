@@ -6,7 +6,7 @@ function FetchAccountData() {
     useEffect(() => {
         fetch(db + "account.json")
             .then((res) => res.json())
-            .then((data) => setDataAccount(data));
+            .then((data) => setDataAccount(Object.values(data)));
     }, []);
 
     return { dataAccount, setDataAccount };

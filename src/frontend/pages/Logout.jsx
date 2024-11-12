@@ -4,7 +4,9 @@ const Logout = () => {
         localStorage.removeItem("username")
         localStorage.removeItem("password")
         window.location.href = "/?logout=succes"
-   return(<></>)
+   return(
+       <></>
+    )
 }
 
 export default Logout

@@ -33,15 +33,15 @@ const ContentImg = () => {
             <div className="d-flex w-100 overflow-hidden flex-column">
                 <h1>CMS Background</h1>
                 <div className="w-100 m-0 p-0" style={{ width: "100%", overflowX: "scroll" }}>
-                    <table className="product-all" style={{ paddingRight: "50px", tableLayout: "fixed", width: "100%" }} id="product-table">
+                    <table className="product-all" style={{  }}>
                         <thead>
                             <tr>
                                 <th style={{ width: "50px" }}>id</th>
                                 <th style={{ width: "100px !important" }}>img</th>
                                 <th className="overflow-hidden" style={{ width: "100px" }}>url img</th>
                                 <th style={{ width: "200px" }}>banner text</th>
-                                <th style={{ width: "200px !important" }}>description</th>
-                                <th style={{ width: "200px !important" }}>Option</th>
+                                <th style={{ width: "150px !important" }}>description</th>
+                                <th style={{ width: "150px" }}>Option</th>
                             </tr>
                         </thead>
                         <tbody id="product-table-body">
@@ -86,7 +86,7 @@ const ContentText = () => {
 
     const handleChangedText = (uniqueId, elem) => {
         const siblingTd = elem.closest("tr").getElementsByTagName("td");
-        for (let i = 0; i < siblingTd.length - 1; i++) {
+        for (let i = 1; i < siblingTd.length - 1; i++) {
             siblingTd[i].contentEditable = true;
             siblingTd[i].classList.add("temp-update-class");
         }
@@ -167,7 +167,7 @@ const ContentText = () => {
                 <h1>CMS Text</h1>
                 <p className="">Custumize cms text in landing page</p>
                 <div className="w-100 m-0 p-0" style={{ width: "100%", overflowX: "scroll" }}>
-                    <table className="product-all" style={{ paddingRight: "50px", tableLayout: "fixed", width: "100%" }} id="product-table">
+                    <table className="product-all" style={{ width: "100%" }} id="product-table">
                         <thead>
                             <tr>
                                 <th style={{ width: "50px" }}>ID</th>
