@@ -39,7 +39,7 @@ const Navbar = () => {
                         </li>
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                About us
+                                Tentang kami
                             </a>
                             <ul className="dropdown-menu">
                                 <li><a className="dropdown-item" href="#ab-desk">Deskripsi</a></li>
@@ -49,7 +49,7 @@ const Navbar = () => {
                             </ul>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#contact">Contact us</a>
+                            <a className="nav-link" href="#contact">Hubungi kami</a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link active" aria-current="page" href="#berita">Berita</a>

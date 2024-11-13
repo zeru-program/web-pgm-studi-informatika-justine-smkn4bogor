@@ -49,7 +49,7 @@ const HeroBanner = () => {
           <div
             className="text-light container justify-content-center d-flex flex-column"
             data-aos="fadeInTop"
-            style={{ width: "auto", height: "100%" }}
+            style={{ width: "320px", height: "100%" }}
           >
             <TypeAnimation
               sequence={[
@@ -72,7 +72,7 @@ const HeroBanner = () => {
             </h4>
             <button
               onClick={() => (window.location.href = "/bergabung")}
-              className="btn-cta-home text-pm col-6 px-1 py-2"
+              className="btn-cta-home animate__zoom text-pm px-1 py-2"
               data-aos="fade-up"
               data-aos-delay="800"
             >
@@ -570,6 +570,7 @@ const Prestasi = () => {
 }
 
 const Contact = () => {
+    const { dataCms } = useCmsData(); 
     return (
       <section
         className="d-flex flex-column contact-section mb-4 py-5 text-pm"
@@ -577,7 +578,7 @@ const Contact = () => {
       >
         <div className="d-flex container-fluid flex-column">
           <h1 data-aos="fade-up" className="m-0 container fw-bold">
-            Kontak Kami
+           {dataCms["contact1_title"] || "Hubungi Kami"}
           </h1>
           <iframe
             data-aos="zoom-in"
@@ -610,7 +611,7 @@ const Contact = () => {
               <i className="bi bi-telephone display-1"></i>
               <div className="d-flex flex-column">
                 <span>Phone</span>
-                <a href="#" className="m-0" style={{ textDecoration: "none" }}>
+                <a href="https://wa.me/628159118035" className="m-0" style={{ textDecoration: "none" }}>
                   +628159118035
                 </a>
               </div>
