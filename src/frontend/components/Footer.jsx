@@ -112,6 +112,11 @@ const Footer = () => {
             <span className="mt-3 desk-footer">
            {dataCms["footer3_alamat"] || "📍 Jl. Sholeh Iskandar, RT.01/RW.10, Kedungbadak, Kec. Tanah Sereal, Kota Bogor, Jawa Barat 16162"}
             </span>
+            <div className="d-flex mt-2 gap-3">
+             <i className="btn-cta-footer bi-instagram" onClick={() => window.open("https://www.instagram.com/uika_bogor/")} />
+             <i className="btn-cta-footer bi-youtube" onClick={() => window.open("https://m.youtube.com/c/UniversitasIBNKhaldunBogor")} />
+             <i className="btn-cta-footer bi-tiktok" onClick={() => window.open("https://www.tiktok.com/@uikabogor")} />
+            </div>
           </div>
         </div>
         <hr className="" />
