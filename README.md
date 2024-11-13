@@ -11,6 +11,7 @@ project ini di init dan dibuat dengan manual (custom with creativity) tanpa meng
 - Firebase & Supabase
 - Chart JS
 - Aos JS
+- Swiper JS
 
 ### Router URL 
 - "/" home page
@@ -25,6 +26,17 @@ project ini di init dan dibuat dengan manual (custom with creativity) tanpa meng
 - "/dashboard/berita" dashboard berita management page (include CRUD)
 - "/dashboard/account" dashboard account management page (include RUD, no create)
 - "/cjsidncjd" 404 page
+
+### Fitur website
+- Responsive design
+- Terintegrasi CMS (content dapat diubah langsung melalui website di page dashboard/cms)
+- Login, Register, Logout System
+- Dashboard admin
+- Asset Lengkap
+- Scroll animation
+- Counter text & Typing text animation
+- Wave animation
+- Button back to top dan smooth
 
 ### Folder Structure
 ```bash
@@ -100,16 +112,3 @@ project ini di init dan dibuat dengan manual (custom with creativity) tanpa meng
 │   └── main.jsx
 └── vite.config.js
 ```
-## Running Project
-
-To run project, run the following command
-
-```bash
-  npm install
-  npm run dev
-```
-
-
-## Used For
-- Lomba Website Program Studi Teknik Informatika - Gebyar IT UIKA Bogor
-
