@@ -9,6 +9,7 @@ const Register = () => {
         window.location.href = "/"
     }
     const [iptUser, setIptUser] = useState("");
+    const [iptEmail, setIptEmail] = useState("");
     const [iptPass, setIptPass] = useState("");
     
     const handleform = (e) => {
@@ -16,6 +17,8 @@ const Register = () => {
         
         var result = {
             username: iptUser,
+            email: iptEmail,
+            role: "user",
             password: iptPass,
             created_at: new Date()
         };
@@ -69,6 +72,7 @@ const Register = () => {
        <form className="d-flex shadow align-items-center container flex-column bg-scm-d py-5 rounded-3" style={{width:"300px", height:"auto"}} onSubmit={handleform}>
          <h1 className="text-center fw-bold">Register</h1>
          <input className="form-control mt-3" placeholder="username" required type="text" value={iptUser} onInput={handleIptUsername} />
+         <input className="form-control mt-3" placeholder="email" required type="text" value={iptEmail} onInput={(e) => setIptEmail(e.target.value)} />
          <input className="form-control mt-3" placeholder="password" type="password" onInput={handleIptPass} required/>
          <button className="mt-3 col-4 btn-login-register">Submit</button>
          <a className='mt-3 text-light' href="/login">Already a account? Login here</a>

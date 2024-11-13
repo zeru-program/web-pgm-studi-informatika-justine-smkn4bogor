@@ -10,6 +10,7 @@ import { createClient } from '@supabase/supabase-js';
 import Swal from 'sweetalert2'
 
 const db = import.meta.env.VITE_DB;
+
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
 const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_KEY;
 
@@ -128,9 +129,14 @@ const AddCmsImg = () => {
 
 const ContentImg = () => {
     const { dataCmsImg } = FetchCmsBackground()
-    
+    const [infoShown, setInfoShown] = useState(false);
+
    
   const temporaryEditCms = (uniqueId, elem) => {
+    if (!infoShown) {
+      Swal.fire("Informasi", "Untuk membatalkan pengeditan data silakan reload/refresh halaman.", "info");
+      setInfoShown(true); // Set infoShown to true to prevent future alerts
+    }
     const siblingTd = elem.closest("tr").getElementsByTagName("td");
     for (let i = 2; i < siblingTd.length - 2; i++) {
       siblingTd[i].contentEditable = true;
@@ -258,6 +264,7 @@ const ContentImg = () => {
 
 const ContentText = () => {
     const [cmsText, setCmsText] = useState([]);
+    const [infoShown, setInfoShown] = useState(false);
 
     useEffect(() => {
         fetch(db + "cms.json")
@@ -280,6 +287,10 @@ const ContentText = () => {
     }, []);
 
     const handleChangedText = (uniqueId, elem) => {
+    if (!infoShown) {
+      Swal.fire("Informasi", "Untuk membatalkan pengeditan data silakan reload/refresh halaman.", "info");
+      setInfoShown(true); // Set infoShown to true to prevent future alerts
+    }
         const siblingTd = elem.closest("tr").getElementsByTagName("td");
         for (let i = 1; i < siblingTd.length - 1; i++) {
             siblingTd[i].contentEditable = true;
@@ -292,7 +303,7 @@ const ContentText = () => {
         elem.onclick = () => {
            var contentId = document.querySelectorAll(".temp-update-class");
            var obj = {
-               [contentId[1].textContent]: contentId[2].textContent
+               [contentId[0].textContent]: contentId[1].textContent
            }
            fetch(db + "cms.json", {
                method: "PATCH",
@@ -368,7 +379,7 @@ const ContentText = () => {
                                 <th style={{ width: "50px" }}>ID</th>
                                 <th style={{ width: "150px" }}>Section</th>
                                 <th style={{ width: "500px" }}>Content</th>
-                                <th>Option</th>
+                               <th>Option</th>
                             </tr>
                         </thead>
                         <tbody id="product-table-body">
@@ -397,6 +408,9 @@ const ContentText = () => {
 
 
 const DashboardCms = () => {
+    if (!localStorage.getItem("hasLogin") && localStorage.getItem("role") !== "admin") {
+        window.location.href = "/"
+    }
     return(
         <>
         <Nav content={<>

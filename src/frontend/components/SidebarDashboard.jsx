@@ -30,6 +30,11 @@ const Nav = ({content}) => {
                     <i className="fs-4 bi-newspaper" /> <span className="ms-1 d-none d-sm-inline">CRUD BERITA</span>
                   </a>
                 </li>
+                <li className="nav-item">
+                  <a href="/dashboard/account" className="nav-link align-middle d-flex gap-3 px-0">
+                    <i className="fs-4 bi-person" /> <span className="ms-1 d-none d-sm-inline">RUD Account</span>
+                  </a>
+                </li>
               </ul>
               <hr />
               <div className="dropdown pb-4">

@@ -18,7 +18,7 @@ const LoginPage = () => {
                 for (let key in data) {
                     var val = data[key]
                     
-                    if (iptUser === val.username && iptPass === val.password) {
+                    if ((iptUser === val.username || iptUser === val.email) && iptPass === val.password) {
                         find = true 
                     Swal.fire({
                         title: "Success",
@@ -29,6 +29,8 @@ const LoginPage = () => {
                        localStorage.setItem("hasLogin", true)
                        localStorage.removeItem("hasRegister")
                         localStorage.setItem("username", val.username)
+                        localStorage.setItem("email", val.email)
+                        localStorage.setItem("role", val.role)
                         localStorage.setItem("password", val.password)
                         window.location.href = "/?auth=succes"  
                      }
@@ -56,8 +58,8 @@ const LoginPage = () => {
     <div className="w-100 vh-100 text-light d-flex justify-content-center align-items-center ">
        <form className="d-flex shadow align-items-center container flex-column bg-scm-d py-5 rounded-3" style={{width:"300px", height:"auto"}} onSubmit={handleform}>
          <h1 className="text-center fw-bold">Login</h1>
-         <input className="form-control mt-3" placeholder="username" required type="text" onInput={handleIptUsername} />
-         <input className="form-control mt-3" placeholder="password" type="password" onInput={handleIptPass} required/>
+         <input className="form-control mt-3" placeholder="username atau email mu.." required type="text" onInput={handleIptUsername} />
+         <input className="form-control mt-3" placeholder="password.." type="password" onInput={handleIptPass} required/>
          <button className="mt-3 col-4 btn-login-register">Submit</button>
          <a className='mt-3 text-light' href="register">Dont have a account? Register here</a>
        </form>

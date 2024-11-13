@@ -53,8 +53,8 @@ const BeritaDetail = () => {
             <div className="d-flex text-pm gap-2 mt-3">
               <i className="bi-person"></i>
               <p>{beritaDetail.created_by}</p>
-              <i className="bi-clock"></i>
-              <p>{beritaDetail.created_at}</p>
+              <i className="bi-calendar"></i>
+              <p>{beritaDetail.tanggal}</p>
             </div>
             <hr />
             <p style={{ whiteSpace: "pre-line" }}>{beritaDetail.content}</p>

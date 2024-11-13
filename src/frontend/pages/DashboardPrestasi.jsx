@@ -17,7 +17,13 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 const DisplayPrestasi = () => {
   const { dataPrestasi } = FetchPrestasiData();
+  const [infoShown, setInfoShown] = useState(false);
+
   const handleTemporaryEdit = (uniqueId, elem) => {
+    if (!infoShown) {
+      Swal.fire("Informasi", "Untuk membatalkan pengeditan data silakan reload/refresh halaman.", "info");
+      setInfoShown(true); // Set infoShown to true to prevent future alerts
+    }
     const siblingTd = elem.closest("tr").getElementsByTagName("td");
     for (let i = 3; i < siblingTd.length - 1; i++) {
       siblingTd[i].contentEditable = true;
@@ -298,6 +304,9 @@ const AddPrestasi = () => {
 };
 
 const MainContent = () => {
+    if (!localStorage.getItem("hasLogin") && localStorage.getItem("role") !== "admin") {
+        window.location.href = "/"
+    }
   return (
     <>
       <h1>Prestasi management</h1>

@@ -52,6 +52,9 @@ const ContentHome = () => {
 }
 
 const DashboardHome = () => {
+    if (!localStorage.getItem("hasLogin") && localStorage.getItem("role") !== "admin") {
+        window.location.href = "/"
+    }
     return (
         <>
         <Nav content={<ContentHome />} />

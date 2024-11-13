@@ -51,6 +51,9 @@ const Navbar = () => {
                         <li className="nav-item">
                             <a className="nav-link" href="#contact">Contact us</a>
                         </li>
+                        <li className="nav-item">
+                            <a className="nav-link active" aria-current="page" href="#berita">Berita</a>
+                        </li>
                         <li className="nav-item" style={{ display: hasLogin ? "none" : "block"}}>
                             <a className="nav-link" href="/login">Login/Register</a>
                         </li>

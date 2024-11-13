@@ -69,16 +69,13 @@
 
 @media screen and (min-width: 1000px) {
     .header-nav {
-        top: 18px !important;
+        top: 30px !important;
     }
     .navbar {
         width: 75%;
         overflow: visible !important;
         border-radius: 70px !important;
         padding: 0 !important;
-    }
-    .header-nav {
-        top: 40px;
     }
     
     #img-fts-nav, #menu-nav {

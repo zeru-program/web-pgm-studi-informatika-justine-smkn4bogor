@@ -9,6 +9,7 @@ import Register from "../frontend/pages/Register"
 import Logout from "../frontend/pages/Logout"
 import DashboardHome from "../frontend/pages/DashboardHome"
 import DashboardCms from "../frontend/pages/DashboardCms"
+import DashboardAccount from "../frontend/pages/DashboardAccount"
 import DashboardPrestasi from "../frontend/pages/DashboardPrestasi"
 import DashboardBerita from "../frontend/pages/DashboardBerita"
 
@@ -26,6 +27,7 @@ function RouterApp() {
         <Route path='/logout' element={<Logout/>} />
         <Route path='/dashboard' element={<DashboardHome/>} />
         <Route path='/dashboard/cms' element={<DashboardCms/>} />
+        <Route path='/dashboard/account' element={<DashboardAccount/>} />
         <Route path='/dashboard/prestasi' element={<DashboardPrestasi/>} />
         <Route path='/dashboard/berita' element={<DashboardBerita/>} />
         <Route path='*' element={<F404/>} />

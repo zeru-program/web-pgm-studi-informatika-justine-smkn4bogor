@@ -15,8 +15,13 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 const DisplayBerita = () => {
   const { dataBerita } = FethBeritaData();
-
+  const [infoShown, setInfoShown] = useState(false);
+  
   const temporaryEditBerita = (uniqueId, elem) => {
+    if (!infoShown) {
+      Swal.fire("Informasi", "Untuk membatalkan pengeditan data silakan reload/refresh halaman.", "info");
+      setInfoShown(true); // Set infoShown to true to prevent future alerts
+    }
     const siblingTd = elem.closest("tr").getElementsByTagName("td");
     for (let i = 3; i < siblingTd.length - 2; i++) {
       siblingTd[i].contentEditable = true;
@@ -138,7 +143,7 @@ const DisplayBerita = () => {
                   <td>{ber.img}</td>
                   <td>{ber.title}</td>
                   <td>{ber.deskripsi}</td>
-                  <td>{ber.content}</td>
+                  <td style={{ whiteSpace: "pre-line" }}>{ber.content}</td>
                   <td>{ber.lokasi}</td>
                   <td>{ber.tanggal}</td>
                   <td>{ber.created_by}</td>
@@ -320,6 +325,9 @@ const AddBerita = () => {
 };
 
 const MainContent = () => {
+    if (!localStorage.getItem("hasLogin") && localStorage.getItem("role") !== "admin") {
+        window.location.href = "/"
+    }
   return (
     <>
       <h1>Berita management</h1>

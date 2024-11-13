@@ -144,7 +144,7 @@ const About = () => {
           <h1 className="text-pm fw-bold m-0" data-aos="fade-up">
             {dataCms["about1_title"] || "About PSTI"}
           </h1>
-          <div className='container-fluid'>
+          <div className='container-xl-fluid'>
             {/* Paragraf pertama - Selalu terlihat */}
             <p data-aos="fade-up" data-aos-delay="500">
               PSTI merupakan program studi yang ke empat berdiri di fakultas
@@ -410,7 +410,7 @@ const VisiMisi = () => {
 const Target = () => {
     return (
       <section
-        className="d-flex flex-column target-section mb-4 py-5 bg-scm2"
+        className="d-flex flex-column target-section mb-1 py-5 bg-scm2"
         id="ab-struktur"
       >
         <div className="d-flex flex-column">
@@ -527,7 +527,7 @@ const Prestasi = () => {
               },
               768: {
                 spaceBetween: 200,
-                slidesPerView: 5,
+                slidesPerView: 4,
               },
             }}
           >
