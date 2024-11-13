@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 function FetchPrestasiData() {
     const [dataPrestasi, setDataPrestasi] = useState([]);
-    const db = "https://gebyar-it-ftsuikabogor-justine-default-rtdb.firebaseio.com/"
+    const db = import.meta.env.VITE_DB;
     useEffect(() => {
         fetch(db + "prestasi.json")
             .then((res) => res.json())

@@ -5,7 +5,9 @@ html, * {
 }
 body {
     font-family: "Outfit", Sans-Serif;
+    padding: 0;
 }
+
 
 h1 {
     font-size: 31px;
@@ -272,7 +274,22 @@ a {
     position: absolute;
     bottom: -12px;
 }
-
+.img-berita-detail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.btn-share {
+    width: 35px;
+    height: 35px;
+    border: 0;
+    border-radius: 50%;
+    transition: all .3s ease;
+}
+.btn-share:hover {
+    background: black !important;
+    color: white !important;
+}
 /*** responsive ***/
 /** max 770px its a mobile view **/
 /** min 770px its a desktop view **/
@@ -302,6 +319,9 @@ a {
         display: flex;
         height: auto;
     }
+    .box-berita img {
+        height: 100%;
+    }
     .box-berita h1 {
         margin-top: 7px;
         margin-left: 10px;
@@ -312,7 +332,7 @@ a {
         font-size: .8em;
     }
     .desk-berita {
-        font-size: .75em !important;
+        display: none;
     }
 }
 @media screen and (min-width: 770px) {
@@ -355,12 +375,12 @@ a {
         margin-left: 10px;
     }
     .box-berita {
-        width: 300px;
-        height: 300px;
+        width: 400px;
+        height: 500px;
     }
     .box-berita img {
         width: 100%;
-        height: 160px;
+        height: 250px;
     }
     .box-berita h1 {
         margin-top: 8px;
@@ -371,6 +391,15 @@ a {
         margin-left: 8px;
         font-size: .9em;
         margin-right: 4px;
+    }
+    .img-berita-detail {
+        height: 100vh;
+    }
+    .contain-berita-detail {
+        display: flex;
+    }
+    .berita-lainnya {
+        width: 50%;
     }
 }
 

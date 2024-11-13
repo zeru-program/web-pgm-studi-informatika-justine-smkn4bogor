@@ -5,6 +5,7 @@ import Nav from "../components/SidebarDashboard"
 import FetchAccountData from '../../backend/FetchAccountData'
 import useCmsData from '../../backend/UseCmsData';
 import FetchBeritaData from '../../backend/FetchBeritaData';
+import LineChart from "../components/LineChart";
 
 const ContentHome = () => {
     const { dataAccount } = FetchAccountData()
@@ -42,6 +43,7 @@ const ContentHome = () => {
       </div>
     </div>
       <div className="d-flex mt-3 flex-column">
+        <LineChart/>
        <h5 className="mt-3">Data statistik website</h5>
        <p>comming soon..</p>
       </div>

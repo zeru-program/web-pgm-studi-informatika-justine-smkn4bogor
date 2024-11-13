@@ -23,7 +23,7 @@ const Footer = () => {
             message: iptSubjek,
             created_at: new Date()
         };
-        fetch("https://gebyar-it-ftsuikabogor-justine-default-rtdb.firebaseio.com/" + "contact.json", {
+        fetch(import.meta.env.VITE_DB + "contact.json", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

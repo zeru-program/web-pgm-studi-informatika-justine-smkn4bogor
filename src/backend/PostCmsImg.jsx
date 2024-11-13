@@ -1,19 +1,14 @@
-const PostBerita = async (title, deskripsi, img, content, created_by, lokasi, tanggal) => {
+const PostCmsImg = async (title, img, created_by) => {
     const db = import.meta.env.VITE_DB;
     try {
-        const response = await fetch(`${db}/berita.json`, {
+        const response = await fetch(`${db}/cms_img.json`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                id_berita: Math.floor(Math.random() * 500 - 10) + 1,
                 title,
                 img,
-                deskripsi,
-                content,
-                lokasi,
-                tanggal,
                 created_by,
                 created_at: new Date()
             })
@@ -25,4 +20,4 @@ const PostBerita = async (title, deskripsi, img, content, created_by, lokasi, ta
     }
 }
 
-export default PostBerita;
+export default PostCmsImg;

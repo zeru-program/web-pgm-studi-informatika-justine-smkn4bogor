@@ -10,6 +10,7 @@ import Splash from '../components/Splash'
 import useCmsData from '../../backend/UseCmsData';
 import FetchPrestasiData from '../../backend/FetchPrestasiData';
 import FetchBeritaData from '../../backend/FetchBeritaData';
+import FetchCmsBackground from "../../backend/FetchCmsBackground"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import ReadMoreReact from 'read-more-react'
@@ -28,15 +29,21 @@ import CountUp from 'react-countup';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-const db = "https://gebyar-it-ftsuikabogor-justine-default-rtdb.firebaseio.com/";
+const db = import.meta.env.VITE_DB;
 
+let bgHome = "/bdrop-uika1.jpeg"
+let sizeBg = "100% 100%"
+let dekanImg = "/dekan-fts.png"
+let bgAbout = "/bdrop-uika3.jpeg"
+let bgStruktur = "/struktur.jpeg"
 
 const HeroBanner = () => {
-    const { dataCms } = useCmsData();
+   const { dataCms } = useCmsData();
+    
     return (
       <>
         <header
-          className="w-100 hero-home align-items-center flex-wrap d-flex" style={{background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 110%), url("bdrop-uika1.jpeg") center center',  backgroundSize: "cover"}}
+          className="w-100 hero-home align-items-center flex-wrap d-flex" style={{background: `linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 110%), url("${bgHome}") center center`, backgroundSize: sizeBg}}
           id="home"
         >
           <div
@@ -133,11 +140,11 @@ const About = () => {
         id="ab-desk"
       >
         <div className="container-fluid contain-about-teks d-flex flex-column my-3">
-            <img src="/dekan-fts.png" className='img-about' style={{transform: "scaleX(-1)"}} alt="" />
+            <img src={dekanImg} className='img-about' style={{transform: "scaleX(-1)"}} alt="" />
           <h1 className="text-pm fw-bold m-0" data-aos="fade-up">
             {dataCms["about1_title"] || "About PSTI"}
           </h1>
-          <div>
+          <div className='container-fluid'>
             {/* Paragraf pertama - Selalu terlihat */}
             <p data-aos="fade-up" data-aos-delay="500">
               PSTI merupakan program studi yang ke empat berdiri di fakultas
@@ -268,8 +275,8 @@ const About = () => {
           data-aos="zoom-in"
           style={{
             height: "150px",
-            background: "url('/bdrop-uika3.jpg') center center",
-            backgroundSize: "cover",
+            background: `url(${bgAbout}) center center`,
+            backgroundSize: sizeBg,
             marginTop: "60px",
           }}
         ></div>
@@ -461,7 +468,7 @@ const Target = () => {
             data-aos="zoom-in"
             data-aos-delay="500"
             className="w-100 mt-5 pb-5 mb-3"
-            src="struktur.jpeg"
+            src={bgStruktur}
             alt=""
           />
         </div>
@@ -519,8 +526,8 @@ const Prestasi = () => {
                 slidesPerView: 2,
               },
               768: {
-                spaceBetween: 300,
-                slidesPerView: 4,
+                spaceBetween: 200,
+                slidesPerView: 5,
               },
             }}
           >
@@ -635,11 +642,11 @@ const Berita = () => {
                 dataBerita.map((berita, index) => (
                   <div className="box-berita shadow" onClick={() => handleClickBerita(berita.id_berita)} key={index}>
                     <img src={berita.img} alt={berita.title} />
-                    <div>
+                    <div className='pb-5'>
                       <h1 className="mb-0 sub-contain-berita">
                         {berita.title}
                       </h1>
-                      <p className="mb-0">
+                      <p className="mb-0 desk-berita">
                         {berita.deskripsi}  
                       </p>
                       <p className="tanggal-berita-sm">{berita.lokasi} - {berita.tanggal}</p>
@@ -658,7 +665,22 @@ const Berita = () => {
 }
 
 const Home = () => {
-    
+    const { dataCmsImg } = FetchCmsBackground()
+    Array.isArray(dataCmsImg) && dataCmsImg.forEach((cms) => {
+      if (cms.title === "home1_banner") {
+        bgHome = cms.img;
+        sizeBg = "cover"
+      } 
+      if (cms.title === "about1_dekan") {
+        dekanImg = cms.img
+      }
+      if (cms.title === "about2_banner") {
+        bgAbout = cms.img
+      }
+      if (cms.title === "about3_struktur") {
+        bgStruktur = cms.img
+      }
+    });
     useEffect(() => {
         AOS.init({
             duration: 1000,

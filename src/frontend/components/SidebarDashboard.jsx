@@ -11,22 +11,22 @@ const Nav = ({content}) => {
               </a>
               <ul className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                 <li className="nav-item">
-                  <a href="/dashboard" className="nav-link align-middle d-flex flex-column px-0">
+                  <a href="/dashboard" className="nav-link align-middle d-flex gap-3 px-0">
                     <i className="fs-4 bi-house"/> <span className="ms-1 d-none d-sm-inline">Home</span>
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a href="/dashboard/cms" className="nav-link align-middle d-flex flex-column px-0">
+                  <a href="/dashboard/cms" className="nav-link align-middle d-flex gap-3 px-0">
                     <i className="fs-4 bi-stack" /> <span className="ms-1 d-none d-sm-inline">CMS</span>
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a href="/dashboard/prestasi" className="nav-link d-flex flex-column align-middle px-0">
+                  <a href="/dashboard/prestasi" className="nav-link d-flex gap-3 align-middle px-0">
                     <i className="fs-4 bi-trophy" /> <span className="ms-1 d-none d-sm-inline">CRUD Prestasi</span>
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a href="/dashboard/berita" className="nav-link align-middle d-flex flex-column px-0">
+                  <a href="/dashboard/berita" className="nav-link align-middle d-flex gap-3 px-0">
                     <i className="fs-4 bi-newspaper" /> <span className="ms-1 d-none d-sm-inline">CRUD BERITA</span>
                   </a>
                 </li>
@@ -35,15 +35,9 @@ const Nav = ({content}) => {
               <div className="dropdown pb-4">
                 <a href="#" className="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                   <img src="https://i.pinimg.com/736x/e8/d7/d0/e8d7d05f392d9c2cf0285ce928fb9f4a.jpg" alt="hugenerd" width={30} height={30} className="rounded-circle" />
-                  <span className="d-none d-sm-inline mx-1">loser</span>
+                  <span className="d-none d-sm-inline mx-1">user</span>
                 </a>
                 <ul className="dropdown-menu dropdown-menu-dark text-small shadow">
-                  <li><a className="dropdown-item" href="#">New project...</a></li>
-                  <li><a className="dropdown-item" href="#">Settings</a></li>
-                  <li><a className="dropdown-item" href="#">Profile</a></li>
-                  <li>
-                    <hr className="dropdown-divider" />
-                  </li>
                   <li><a className="dropdown-item" href="/logout">Sign out</a></li>
                 </ul>
               </div>

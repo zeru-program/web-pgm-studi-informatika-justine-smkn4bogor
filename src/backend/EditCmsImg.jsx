@@ -1,7 +1,7 @@
-const EditBerita = async (id, img, title, deskripsi, content, lokasi, tanggal, created_by) => {
+const EditCmsImg = async (id, img, title, created_by) => {
     const db = import.meta.env.VITE_DB;
     try {
-        const response = await fetch(`${db}/berita/${id}.json`, {
+        const response = await fetch(`${db}/cms_img/${id}.json`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json"
@@ -9,10 +9,6 @@ const EditBerita = async (id, img, title, deskripsi, content, lokasi, tanggal, c
             body: JSON.stringify({
                 img,
                 title,
-                deskripsi,
-                content,
-                lokasi,
-                tanggal,
                 created_by
             })
         });
@@ -23,4 +19,4 @@ const EditBerita = async (id, img, title, deskripsi, content, lokasi, tanggal, c
     }
 }
 
-export default EditBerita;
+export default EditCmsImg;

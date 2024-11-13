@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Home from "../frontend/pages/Home"
+import BeritaDetail from '../frontend/pages/BeritaDetail'
 import F404 from "../frontend/pages/F404"
 import Join from "../frontend/pages/Join"
 import LoginPage from "../frontend/pages/LoginPage"
@@ -18,7 +19,7 @@ function RouterApp() {
     <Router>
       <Routes>
         <Route path='/' element={<Home/>} />
-        <Route path='/berita/:id' element={<Home/>} />
+        <Route path='/berita/:id' element={<BeritaDetail/>} />
         <Route path='/bergabung' element={<Join/>} />
         <Route path='/login' element={<LoginPage/>} />
         <Route path='/register' element={<Register/>} />

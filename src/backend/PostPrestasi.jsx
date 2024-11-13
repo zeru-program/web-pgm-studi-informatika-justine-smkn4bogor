@@ -1,5 +1,7 @@
 const PostPrestasi = async (title, lomba, img, lokasi, tanggal) => {
-    const db = "https://gebyar-it-ftsuikabogor-justine-default-rtdb.firebaseio.com/";
+
+    const db = import.meta.env.VITE_DB;
+
     try {
         const response = await fetch(`${db}/prestasi.json`, {
             method: "POST",
@@ -7,6 +9,7 @@ const PostPrestasi = async (title, lomba, img, lokasi, tanggal) => {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
+                id: Math.floor(Math.random() * 500 - 100) + 1,
                 title,
                 lomba,
                 img,

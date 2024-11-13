@@ -1,5 +1,5 @@
-const EditPrestasi = async (id, id_prestasi, img, title, lomba, lokasi, tanggal) => {
-    const db = "https://gebyar-it-ftsuikabogor-justine-default-rtdb.firebaseio.com/";
+const EditPrestasi = async (id, img, title, lomba, lokasi, tanggal) => {
+    const db = import.meta.env.VITE_DB;
     try {
         const response = await fetch(`${db}/prestasi/${id}.json`, {
             method: "PATCH",
@@ -7,7 +7,6 @@ const EditPrestasi = async (id, id_prestasi, img, title, lomba, lokasi, tanggal)
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                id_pres: id_prestasi,
                 img,
                 title,
                 lomba,

@@ -14,10 +14,10 @@ const Navbar = () => {
     
     const handleNav = () => {
         if (statusNav) {
-            setImgNav("nav-close.svg")
+            setImgNav("/nav-close.svg")
             setPadBot("0")
         } else {
-            setImgNav("nav.svg")
+            setImgNav("/nav.svg")
             setPadBot("8px")
         }
         setStatusNav(!statusNav)

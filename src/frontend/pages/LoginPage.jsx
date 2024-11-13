@@ -11,7 +11,7 @@ const LoginPage = () => {
     const handleform = (e) => {
       e.preventDefault()
         
-        fetch("https://gebyar-it-ftsuikabogor-justine-default-rtdb.firebaseio.com/" + "account.json")
+        fetch(import.meta.env.VITE_DB + "account.json")
             .then(res => res.json())
             .then(data => {
                 var find = false 

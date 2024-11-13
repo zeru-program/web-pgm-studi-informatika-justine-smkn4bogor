@@ -1,6 +1,6 @@
 const DeleteBerita = async (id) => {
-    const db = "https://gebyar-it-ftsuikabogor-justine-default-rtdb.firebaseio.com/";
-    
+   
+    const db = import.meta.env.VITE_DB;
       
     try {
         const response = await fetch(`${db}/berita/${id}.json`, {

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 function FetchBeritaData() {
     const [dataBerita, setDataBerita] = useState([]);
-    const db = "https://gebyar-it-ftsuikabogor-justine-default-rtdb.firebaseio.com/"
+    const db = import.meta.env.VITE_DB;
     useEffect(() => {
         fetch(db + "berita.json")
             .then((res) => res.json())
