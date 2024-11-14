@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import FetchBeritaData from "../../backend/FetchBeritaData";
 import { useParams } from "react-router-dom";
+import Splash from '../components/Splash'
 import AOS from "aos";
 import Swal from "sweetalert2";
 import "aos/dist/aos.css";
@@ -38,6 +39,7 @@ const BeritaDetail = () => {
 
   return (
     <>
+      <Splash />
       <Navbar />
       {beritaDetail ? (
         <div>
@@ -49,19 +51,20 @@ const BeritaDetail = () => {
           />
           <div className="contain-berita-detail">
           <div className="container-fluid py-3 mb-3">
-            <h1 className="text-pm fw-bold">{beritaDetail.title}</h1>
-            <div className="d-flex text-pm gap-2 mt-3">
+            <h1 data-aos="fade-up" className="text-pm fw-bold">{beritaDetail.title}</h1>
+            <div data-aos="fade-up" data-aos-delay="500" className="d-flex text-pm gap-2 mt-3">
               <i className="bi-person"></i>
               <p>{beritaDetail.created_by}</p>
               <i className="bi-calendar"></i>
               <p>{beritaDetail.tanggal}</p>
             </div>
             <hr />
-            <p style={{ whiteSpace: "pre-line" }}>{beritaDetail.content}</p>
+            <p data-aos="fade-up" data-aos-delay="500" style={{ whiteSpace: "pre-line" }}>{beritaDetail.content}</p>
             <hr />
             <div className="d-flex gap-2 mt-3">
-              <h4>Bagikan: </h4>
-              <button
+              <h4 data-aos="fade-right">Bagikan: </h4>
+              <button 
+                data-aos="fade-in"
                 className="btn-share"
                 onClick={handleShareWa}
                 style={{ background: "green" }}
@@ -69,6 +72,7 @@ const BeritaDetail = () => {
                 <i className="bi-whatsapp text-light"></i>
               </button>
               <button
+                data-aos="fade-in"
                 className="btn-share"
                 onClick={handleCopy}
                 style={{ background: "gray" }}
@@ -110,7 +114,7 @@ const BeritaDetail = () => {
                     </div>
                   ))
                 ) : (
-                  <p>Belum ada berita..</p>
+                  <p className="w-100 vh-100 d-flex justify-content-center align-items-center">Belum ada berita..</p>
                 )}
               </div>
             </div>
@@ -118,7 +122,7 @@ const BeritaDetail = () => {
           </div>
         </div>
       ) : (
-        <p>Berita tidak ditemukan</p>
+        <p className="w-100 vh-100 d-flex justify-content-center align-items-center">404 | Berita tidak ditemukan</p>
       )}
       <Footer />
     </>

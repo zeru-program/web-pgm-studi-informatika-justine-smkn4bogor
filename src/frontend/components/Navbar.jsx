@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useLocation } from 'react-router-dom';
 import "../../Navbar.css";
 
 const Navbar = () => {
+    const loc = useLocation();
     const [statusNav, setStatusNav] = useState(true)
     const [imgNav, setImgNav] = useState("/nav.svg")
     const [padBot, setPadBot] = useState("8px")
@@ -34,6 +36,15 @@ const Navbar = () => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul className="navbar-nav">
+                     {loc.pathname.includes("berita") && (
+                        <>
+                        <li className="nav-item">
+                            <a className="nav-link active" aria-current="page" href="/">Home</a>
+                        </li>
+                        </>
+                        )}
+                     {loc.pathname === "/" && (
+                        <>
                         <li className="nav-item">
                             <a className="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
@@ -54,6 +65,8 @@ const Navbar = () => {
                         <li className="nav-item">
                             <a className="nav-link active" aria-current="page" href="#berita">Berita</a>
                         </li>
+                        </>
+                        )}
                         <li className="nav-item" style={{ display: hasLogin ? "none" : "block"}}>
                             <a className="nav-link" href="/login">Login/Register</a>
                         </li>

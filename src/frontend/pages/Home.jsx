@@ -532,7 +532,9 @@ const Prestasi = () => {
             }}
           >
              {
-              Array.isArray(dataPrestasi) && dataPrestasi.map((pres, index) => (
+              Array.isArray(dataPrestasi) && dataPrestasi
+                  .sort((a, b) => new Date(a.tanggal) - new Date(b.tanggal)) // Urutkan  dari yang terlama
+                  .map((pres, index) => (
                 <SwiperSlide className="swiper-prestasi container" key={index}>
                   <div className="box-prestasi shadow-sm">
                     <img src={pres.img} alt={pres.title} />
