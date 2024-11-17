@@ -24,6 +24,7 @@ import {
 import { TypeAnimation } from 'react-type-animation';
 import Wave from 'react-wavify'
 import CountUp from 'react-countup';
+import Swal from "sweetalert2";
 
 // Import CSS Swiper
 import 'swiper/css';
@@ -139,8 +140,14 @@ const About = () => {
         className="d-flex flex-column about-section pb-4 mb-4"
         id="ab-desk"
       >
-        <div className="container-fluid contain-about-teks d-flex flex-column my-3">
+        <div className="container-fluid contain-about-teks d-flex flex-wrap gap-3 justify-content-center my-3">
+          <div className="d-flex flex-column align-items-md-center align-items-lg-center"> 
             <img src={dekanImg} className='img-about' style={{transform: "scaleX(-1)"}} alt="" />
+            <span style={{fontSize: ".95em", color: "yellow"}} className="py-1 mb-2 px-1 rounded-2 bg-scm-d">
+               Dr. Ir. H. Muhammad Nanang Prayudyanto, M.Sc
+            </span>
+          </div>
+          <div className="responsive-p-about">
           <h1 className="text-pm fw-bold m-0" data-aos="fade-up">
             {dataCms["about1_title"] || "About PSTI"}
           </h1>
@@ -240,6 +247,7 @@ const About = () => {
                 </p>{" "}
               </>
             )}
+          </div>
           </div>
         </div>
         <div className='my-3 d-flex flex-wrap justify-content-center gap-3'>
@@ -690,6 +698,16 @@ const Home = () => {
             once: true,
         })
     }, [])
+    const displayAdminAcc = localStorage.getItem("display-admin-acc")
+    if (!displayAdminAcc) {
+        Swal.fire("Informasi Account", "Hai panitia lomba, jika ingin mengakses dashboard silakan login terlebih dahulu menggunakan username 'admin' dan password 'TIFTSuika2409', alert ini hanya muncul 1x, terimakasih.", "info").then(
+            (result) => {
+              if (result.isConfirmed) {
+                localStorage.setItem("display-admin-acc", true)
+              }
+            }
+          );
+    }
     return (
       <>
         <Splash />

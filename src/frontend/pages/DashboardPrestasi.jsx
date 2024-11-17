@@ -128,7 +128,9 @@ const DisplayPrestasi = () => {
           </thead>
           <tbody id="product-table-body">
             {Array.isArray(dataPrestasi) &&
-              dataPrestasi.map((pres, index) => (
+              dataPrestasi
+	    	.sort((a, b) => new Date(a.tanggal) - new Date(b.tanggal))
+		.map((pres, index) => (
                 <tr key={index}>
                   <td>{index + 1}</td>
                   <td>{pres.id_pres}</td>
