@@ -8,6 +8,15 @@ body {
     padding: 0;
 }
 
+::-moz-selection { /* Code for Firefox */
+  color: yellow;
+  background: #27005D;
+}
+
+::selection {
+  color: yellow;
+  background: #27005D;
+}
 
 h1 {
     font-size: 31px;

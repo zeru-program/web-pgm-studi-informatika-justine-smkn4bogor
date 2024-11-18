@@ -66,9 +66,8 @@ const ContentHome = () => {
 
             {/* Website Statistics */}
             <div className="d-flex mt-3 flex-column">
+		<h5 className="mt-3">Website Statistics</h5>
                 <LineChart />
-                <h5 className="mt-3">Website Statistics</h5>
-                <p>Coming soon..</p>
             </div>
 
             {/* Quick Links */}
